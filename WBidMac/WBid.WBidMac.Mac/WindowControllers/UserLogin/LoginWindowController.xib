@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="LoginWindowController">
+            <connections>
+                <outlet property="CancelButton" destination="DgP-DM-DV1" id="oGd-gN-JG9"/>
+                <outlet property="LoginButton" destination="K7S-xz-b3u" id="Ai5-aR-jHi"/>
+                <outlet property="PasswordTextField" destination="wHA-a5-doU" id="vDJ-tY-ID9"/>
+                <outlet property="UserIdTextField" destination="Ug8-go-itc" id="kNw-1N-dUk"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="User Account Process" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" animationBehavior="default" id="Y9j-8K-sY6">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <rect key="contentRect" x="131" y="86" width="505" height="473"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" id="gWr-Qc-nbb">
+                <rect key="frame" x="0.0" y="0.0" width="505" height="473"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8sm-w5-faU">
+                        <rect key="frame" x="8" y="433" width="489" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="z5h-z1-vco"/>
+                        </constraints>
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="New !!" id="oRS-dP-YSX">
+                            <font key="font" size="17" name="AlBayan-Bold"/>
+                            <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Wup-dV-xSe">
+                        <rect key="frame" x="18" y="318" width="469" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="U0u-Gv-cEh"/>
+                        </constraints>
+                        <textFieldCell key="cell" selectable="YES" alignment="left" id="eNu-Ci-eTi">
+                            <font key="font" metaFont="system" size="17"/>
+                            <string key="title">We are creating user accounts to make WBidMax more secure  First we'll check for an existing account and verify you are an employee</string>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="AeK-Jg-Yeg">
+                        <rect key="frame" x="18" y="251" width="469" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="aT2-c6-4mI"/>
+                        </constraints>
+                        <textFieldCell key="cell" selectable="YES" alignment="left" title="Please login using your CWA/SwaLife sign in:" id="Qoo-Dl-lRP">
+                            <font key="font" metaFont="system" size="17"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VqP-Vg-aKu">
+                        <rect key="frame" x="21" y="207" width="109" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="105" id="9pP-j7-l2A"/>
+                        </constraints>
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="User ID:" id="rC0-UB-gqb">
+                            <font key="font" metaFont="system" size="16"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ug8-go-itc">
+                        <rect key="frame" x="136" y="202" width="129" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="1hy-08-U8U"/>
+                            <constraint firstAttribute="width" constant="129" id="x1i-9M-val"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="ZRE-VR-gBH">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nar-p6-s7Z">
+                        <rect key="frame" x="21" y="150" width="109" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="105" id="UWc-EB-HdE"/>
+                        </constraints>
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Password:" id="NUG-LQ-IaQ">
+                            <font key="font" metaFont="system" size="16"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wHA-a5-doU">
+                        <rect key="frame" x="136" y="144" width="129" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="2u2-SI-GwM"/>
+                            <constraint firstAttribute="width" constant="129" id="6Xy-3b-Lov"/>
+                        </constraints>
+                        <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="2H3-pR-k0v">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <allowedInputSourceLocales>
+                                <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                            </allowedInputSourceLocales>
+                        </secureTextFieldCell>
+                    </secureTextField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K7S-xz-b3u">
+                        <rect key="frame" x="371" y="79" width="101" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="0dc-z2-Jb5"/>
+                            <constraint firstAttribute="width" constant="89" id="iST-bT-ej2"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ier-O7-XCb">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="LoginBtnTapped:" target="-2" id="imb-0E-dov"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DgP-DM-DV1">
+                        <rect key="frame" x="33" y="79" width="101" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="89" id="VB9-CU-ukE"/>
+                            <constraint firstAttribute="height" constant="21" id="udI-76-DYs"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="myp-0M-Sjf">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="CancelBtnTapped:" target="-2" id="7Li-tK-ocJ"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="K7S-xz-b3u" secondAttribute="trailing" constant="39" id="07k-aT-v8V"/>
+                    <constraint firstItem="nar-p6-s7Z" firstAttribute="leading" secondItem="gWr-Qc-nbb" secondAttribute="leading" constant="23" id="0aH-Hr-3E6"/>
+                    <constraint firstAttribute="trailing" secondItem="8sm-w5-faU" secondAttribute="trailing" constant="10" id="4Az-B9-aFC"/>
+                    <constraint firstItem="VqP-Vg-aKu" firstAttribute="top" secondItem="AeK-Jg-Yeg" secondAttribute="bottom" constant="25" id="4EI-dj-h6H"/>
+                    <constraint firstItem="DgP-DM-DV1" firstAttribute="top" secondItem="wHA-a5-doU" secondAttribute="bottom" constant="37" id="6aK-rR-lbt"/>
+                    <constraint firstItem="8sm-w5-faU" firstAttribute="top" secondItem="gWr-Qc-nbb" secondAttribute="top" constant="20" symbolic="YES" id="BUo-oD-RvL"/>
+                    <constraint firstItem="Ug8-go-itc" firstAttribute="leading" secondItem="VqP-Vg-aKu" secondAttribute="trailing" constant="8" symbolic="YES" id="ICq-bn-I4B"/>
+                    <constraint firstItem="wHA-a5-doU" firstAttribute="top" secondItem="Ug8-go-itc" secondAttribute="bottom" constant="28" id="JFK-bT-BOc"/>
+                    <constraint firstItem="Ug8-go-itc" firstAttribute="top" secondItem="AeK-Jg-Yeg" secondAttribute="bottom" constant="19" id="QjP-x5-w3v"/>
+                    <constraint firstItem="wHA-a5-doU" firstAttribute="leading" secondItem="nar-p6-s7Z" secondAttribute="trailing" constant="8" symbolic="YES" id="VhF-YP-yzU"/>
+                    <constraint firstItem="DgP-DM-DV1" firstAttribute="leading" secondItem="gWr-Qc-nbb" secondAttribute="leading" constant="39" id="ZZm-EW-o0C"/>
+                    <constraint firstItem="Wup-dV-xSe" firstAttribute="top" secondItem="8sm-w5-faU" secondAttribute="bottom" constant="15" id="biN-zx-i7p"/>
+                    <constraint firstItem="AeK-Jg-Yeg" firstAttribute="top" secondItem="Wup-dV-xSe" secondAttribute="bottom" constant="37" id="fNp-Rv-kZz"/>
+                    <constraint firstItem="8sm-w5-faU" firstAttribute="leading" secondItem="gWr-Qc-nbb" secondAttribute="leading" constant="10" id="hjY-eg-yBO"/>
+                    <constraint firstAttribute="trailing" secondItem="AeK-Jg-Yeg" secondAttribute="trailing" constant="20" id="ho2-5T-dVZ"/>
+                    <constraint firstItem="Wup-dV-xSe" firstAttribute="leading" secondItem="gWr-Qc-nbb" secondAttribute="leading" constant="20" id="odg-s4-VXJ"/>
+                    <constraint firstAttribute="trailing" secondItem="Wup-dV-xSe" secondAttribute="trailing" constant="20" id="puj-Zm-1dR"/>
+                    <constraint firstItem="AeK-Jg-Yeg" firstAttribute="leading" secondItem="gWr-Qc-nbb" secondAttribute="leading" constant="20" id="rmG-Ux-Mef"/>
+                    <constraint firstItem="K7S-xz-b3u" firstAttribute="top" secondItem="AeK-Jg-Yeg" secondAttribute="bottom" constant="144" id="s4I-nj-Fth"/>
+                    <constraint firstItem="VqP-Vg-aKu" firstAttribute="leading" secondItem="gWr-Qc-nbb" secondAttribute="leading" constant="23" id="uut-sD-5T1"/>
+                    <constraint firstItem="nar-p6-s7Z" firstAttribute="top" secondItem="VqP-Vg-aKu" secondAttribute="bottom" constant="38" id="ww0-ka-2tP"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="-642" y="140"/>
+        </window>
+    </objects>
+</document>

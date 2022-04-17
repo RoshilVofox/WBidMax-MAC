@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MonthToMonthAlertViewController">
+            <connections>
+                <outlet property="btnKink2" destination="R9U-Ps-bl3" id="k9H-WG-wLs"/>
+                <outlet property="btnLink1" destination="Nzb-c2-45q" id="ev1-sX-4mh"/>
+                <outlet property="btnLink3" destination="lCo-j8-Z0o" id="PZB-0Z-PHx"/>
+                <outlet property="lblAlert" destination="Ypd-vL-3Tr" id="L4T-bz-VE0"/>
+                <outlet property="window" destination="2" id="6"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Month To Month vacation Alert" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" animationBehavior="default" id="2" customClass="MonthToMonthAlertView">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <rect key="contentRect" x="131" y="74" width="506" height="243"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" misplaced="YES" id="3">
+                <rect key="frame" x="0.0" y="0.0" width="526" height="233"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ypd-vL-3Tr">
+                        <rect key="frame" x="38" y="143" width="450" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="PHu-qR-tLQ"/>
+                            <constraint firstAttribute="width" constant="446" id="hcH-Fw-Y7r"/>
+                        </constraints>
+                        <textFieldCell key="cell" title="Label" id="W2f-Mu-zxg">
+                            <font key="font" usesAppearanceFont="YES"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nzb-c2-45q">
+                        <rect key="frame" x="34" y="95" width="458" height="32"/>
+                        <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="r6a-Bo-bvR">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="btnLink1tap:" target="-2" id="qjK-Xv-tZZ"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="R9U-Ps-bl3">
+                        <rect key="frame" x="34" y="54" width="458" height="32"/>
+                        <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="awC-hG-k5O">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="btnLink2Tap:" target="-2" id="H0K-09-f3p"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lCo-j8-Z0o">
+                        <rect key="frame" x="234" y="13" width="59" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="47" id="HnQ-Rc-5Es"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bcG-bH-8pE">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="btnOkTapped:" target="-2" id="8Nu-Rg-qSK"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="lCo-j8-Z0o" firstAttribute="top" secondItem="R9U-Ps-bl3" secondAttribute="bottom" constant="20" id="1NN-Zo-3gH"/>
+                    <constraint firstItem="Nzb-c2-45q" firstAttribute="top" secondItem="Ypd-vL-3Tr" secondAttribute="bottom" constant="20" id="44y-n1-jcw"/>
+                    <constraint firstItem="R9U-Ps-bl3" firstAttribute="top" secondItem="Nzb-c2-45q" secondAttribute="bottom" constant="20" id="9s8-8f-WPN"/>
+                    <constraint firstItem="Ypd-vL-3Tr" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="40" id="BoT-W5-8Dg"/>
+                    <constraint firstAttribute="bottom" secondItem="lCo-j8-Z0o" secondAttribute="bottom" constant="20" id="Byi-zP-xSm"/>
+                    <constraint firstItem="Nzb-c2-45q" firstAttribute="trailing" secondItem="Ypd-vL-3Tr" secondAttribute="trailing" id="D2l-FL-gsU"/>
+                    <constraint firstAttribute="trailing" secondItem="Ypd-vL-3Tr" secondAttribute="trailing" constant="40" id="GQM-jY-cXh"/>
+                    <constraint firstItem="Ypd-vL-3Tr" firstAttribute="top" secondItem="3" secondAttribute="top" constant="40" id="GrA-5Q-zso"/>
+                    <constraint firstItem="Nzb-c2-45q" firstAttribute="leading" secondItem="Ypd-vL-3Tr" secondAttribute="leading" id="SJd-qq-UwT"/>
+                    <constraint firstItem="lCo-j8-Z0o" firstAttribute="centerX" secondItem="R9U-Ps-bl3" secondAttribute="centerX" id="V52-8o-Lke"/>
+                    <constraint firstItem="R9U-Ps-bl3" firstAttribute="trailing" secondItem="Nzb-c2-45q" secondAttribute="trailing" id="ozE-rf-gqQ"/>
+                    <constraint firstItem="R9U-Ps-bl3" firstAttribute="leading" secondItem="Nzb-c2-45q" secondAttribute="leading" id="xIt-3S-YTe"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="134" y="91.5"/>
+        </window>
+    </objects>
+</document>

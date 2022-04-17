@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19162" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19162"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="HomeWindowController">
+            <connections>
+                <outlet property="arrBidList" destination="6L8-lu-if6" id="uE6-rs-04I"/>
+                <outlet property="btnCollection" destination="maH-ck-J1U" id="RLO-uP-5se"/>
+                <outlet property="btnDeleteBid" destination="wtL-g6-khf" id="BQH-wO-tEb"/>
+                <outlet property="btnEdit" destination="wmS-jk-jlE" id="8NH-tW-d0i"/>
+                <outlet property="btnNewBid" destination="o9P-Xt-1BS" id="ojk-w2-6qY"/>
+                <outlet property="btnRetrieve" destination="CMh-8g-xNf" id="ENH-hK-ifK"/>
+                <outlet property="lblBidName" destination="1Ls-w1-DD9" id="vwa-uZ-BoA"/>
+                <outlet property="lblMonthYear" destination="Xs8-Rt-9So" id="qLo-wI-dXJ"/>
+                <outlet property="vwCollectionItem" destination="7J3-eW-tck" id="h1X-E4-Xcp"/>
+                <outlet property="vwHomeCollection" destination="eh0-GF-RgA" id="Ffb-Qy-gNh"/>
+                <outlet property="window" destination="2" id="6"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="WBidMax - Home" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" animationBehavior="default" toolbarStyle="expanded" id="2" customClass="HomeWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <rect key="contentRect" x="131" y="74" width="720" height="500"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <value key="minSize" type="size" width="720" height="500"/>
+            <view key="contentView" id="3">
+                <rect key="frame" x="0.0" y="0.0" width="720" height="500"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTi-xL-m0m">
+                        <rect key="frame" x="-1" y="-1" width="722" height="502"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <clipView key="contentView" id="1ks-fT-8mG">
+                            <rect key="frame" x="1" y="1" width="720" height="500"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <collectionView id="eh0-GF-RgA">
+                                    <rect key="frame" x="0.0" y="0.0" width="720" height="500"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <binding destination="6L8-lu-if6" name="content" keyPath="arrangedObjects" id="nE7-02-OzH"/>
+                                        <binding destination="6L8-lu-if6" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="nE7-02-OzH" id="ehi-YU-rTe"/>
+                                        <outlet property="itemPrototype" destination="rRJ-Ch-XVK" id="wiF-Zw-vVj"/>
+                                        <outlet property="lblMonthYear" destination="Xs8-Rt-9So" id="jEV-YU-H4V"/>
+                                    </connections>
+                                </collectionView>
+                            </subviews>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="t59-hG-2Ds">
+                            <rect key="frame" x="1" y="144" width="233" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="6Vq-AZ-qHK">
+                            <rect key="frame" x="234" y="1" width="15" height="143"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                </subviews>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="9893606C-FD4E-4708-840F-0C5108829CD7" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="bj8-N4-E81">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="59D01D47-0C39-4B41-8265-7B240A7A670C" label="Download New Bid Period" paletteLabel="Download New Bid Period" title="New Bid Period" id="WVl-Rj-hHc">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="82" height="24"/>
+                        <size key="maxSize" width="135" height="32"/>
+                        <button key="view" verticalHuggingPriority="750" id="o9P-Xt-1BS">
+                            <rect key="frame" x="12" y="14" width="119" height="25"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundTextured" title="New Bid Period" bezelStyle="texturedRounded" alignment="center" inset="2" id="kGZ-Wq-oew">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="2AR-XO-Egh"/>
+                    <toolbarItem implicitItemIdentifier="6F23E831-5F4E-4B28-9716-BB15B6D62A48" label="Edit" paletteLabel="Edit" title="Edit" id="p5P-xx-UqZ">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="50" height="25"/>
+                        <size key="maxSize" width="50" height="25"/>
+                        <button key="view" verticalHuggingPriority="750" id="wmS-jk-jlE">
+                            <rect key="frame" x="0.0" y="14" width="50" height="25"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundTextured" title="Edit" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="r4s-Oz-4tK">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="48C64D35-F2D4-4EB6-82AC-354FCE7D1333" label="Retrieve" paletteLabel="Retrieve" title="Retrieve" id="7hP-Sc-9SB">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="100" height="25"/>
+                        <size key="maxSize" width="100" height="25"/>
+                        <popUpButton key="view" verticalHuggingPriority="750" id="CMh-8g-xNf">
+                            <rect key="frame" x="0.0" y="14" width="100" height="25"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <popUpButtonCell key="cell" type="roundTextured" title="Retrieve" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" selectedItem="FZm-nM-gu8" id="uha-lX-m6H">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="menu"/>
+                                <menu key="menu" showsStateColumn="NO" id="0jY-Gz-uDZ">
+                                    <items>
+                                        <menuItem title="Retrieve" hidden="YES" id="LVD-vu-ugs"/>
+                                        <menuItem title="New Bid Period" id="FZm-nM-gu8"/>
+                                        <menuItem title="Historical Bid Period" tag="1" id="ee4-v4-iOD"/>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                        </popUpButton>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="7hP-Sc-9SB"/>
+                    <toolbarItem reference="2AR-XO-Egh"/>
+                    <toolbarItem reference="p5P-xx-UqZ"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <point key="canvasLocation" x="140" y="127"/>
+        </window>
+        <collectionViewItem id="rRJ-Ch-XVK">
+            <connections>
+                <outlet property="view" destination="7J3-eW-tck" id="eRM-6B-Uql"/>
+            </connections>
+        </collectionViewItem>
+        <view id="7J3-eW-tck">
+            <rect key="frame" x="0.0" y="0.0" width="175" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ho4-PK-xUQ">
+                    <rect key="frame" x="5" y="0.0" width="165" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="cpBgMen" id="UCw-sp-0Yf"/>
+                    <connections>
+                        <binding destination="rRJ-Ch-XVK" name="value" keyPath="self.representedObject.Image" id="cFK-IE-u4z"/>
+                    </connections>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xs8-Rt-9So">
+                    <rect key="frame" x="45" y="30" width="111" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="5bD-1s-yWq">
+                        <font key="font" metaFont="cellTitle"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="rRJ-Ch-XVK" name="value" keyPath="representedObject.Date" id="sPB-Q4-uLV"/>
+                    </connections>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ls-w1-DD9">
+                    <rect key="frame" x="45" y="12" width="120" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="Eeg-Qb-nCA">
+                        <font key="font" metaFont="cellTitle"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="rRJ-Ch-XVK" name="value" keyPath="representedObject.Name" id="NOY-ir-iZC"/>
+                    </connections>
+                </textField>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="maH-ck-J1U">
+                    <rect key="frame" x="5" y="-2" width="165" height="55"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" transparent="YES" imageScaling="proportionallyDown" inset="2" id="ytL-EI-qXP">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system" size="1"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="rRJ-Ch-XVK" name="title" keyPath="representedObject.Index" id="3uQ-hf-nLA"/>
+                    </connections>
+                </button>
+                <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wtL-g6-khf">
+                    <rect key="frame" x="148" y="28" width="22" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="closeIcon" imagePosition="above" alignment="center" imageScaling="proportionallyDown" id="WDw-dM-vS3">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="rRJ-Ch-XVK" name="alternateTitle" keyPath="self.representedObject.Index" id="jRB-fv-1VP"/>
+                        <binding destination="rRJ-Ch-XVK" name="hidden" keyPath="self.representedObject.Show" id="x0S-5v-Aif"/>
+                    </connections>
+                </button>
+            </subviews>
+            <point key="canvasLocation" x="143" y="487"/>
+        </view>
+        <arrayController objectClassName="BidList" id="6L8-lu-if6" userLabel="BidList">
+            <declaredKeys>
+                <string>Name</string>
+                <string>Index</string>
+                <string>Date</string>
+                <string>Show</string>
+                <string>Image</string>
+            </declaredKeys>
+            <classReference key="objectClass" className="BidList"/>
+        </arrayController>
+    </objects>
+    <resources>
+        <image name="closeIcon" width="48" height="48"/>
+        <image name="cpBgMen" width="400" height="100"/>
+    </resources>
+</document>

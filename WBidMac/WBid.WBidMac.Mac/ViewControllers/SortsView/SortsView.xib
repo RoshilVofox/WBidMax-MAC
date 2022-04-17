@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SortsViewController">
+            <connections>
+                <outlet property="btnBlankToBottom" destination="18" id="156"/>
+                <outlet property="btnBlockDrop" destination="72" id="166"/>
+                <outlet property="btnBlockSort" destination="70" id="165"/>
+                <outlet property="btnClear" destination="190" id="192"/>
+                <outlet property="btnHelpSort" destination="193" id="195"/>
+                <outlet property="btnLineNumber" destination="54" id="158"/>
+                <outlet property="btnLinePay" destination="56" id="159"/>
+                <outlet property="btnPayPerDH" destination="62" id="161"/>
+                <outlet property="btnPayPerDay" destination="58" id="160"/>
+                <outlet property="btnPayPerFDP" destination="66" id="163"/>
+                <outlet property="btnPayPerFH" destination="64" id="162"/>
+                <outlet property="btnPayPerTimeAway" destination="68" id="164"/>
+                <outlet property="btnReserveToBottom" destination="19" id="157"/>
+                <outlet property="btnSortByAward" destination="3PZ-68-MAb" id="jbB-Zq-EMO"/>
+                <outlet property="btnSortBySubmitted" destination="mqJ-UD-YTb" id="nve-s5-SUP"/>
+                <outlet property="lblManual" destination="170" id="173"/>
+                <outlet property="lblSelected" destination="168" id="172"/>
+                <outlet property="tblBlockSort" destination="81" id="167"/>
+                <outlet property="view" destination="4" id="17"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="4" customClass="SortsView">
+            <rect key="frame" x="0.0" y="0.0" width="450" height="470"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button id="18">
+                    <rect key="frame" x="10" y="400" width="210" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="squareTextured" title="Blank Lines to Bottom" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="21">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button id="19">
+                    <rect key="frame" x="230" y="400" width="210" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="squareTextured" title="Reserve Lines to Bottom" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="20">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button id="54">
+                    <rect key="frame" x="10" y="360" width="135" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="squareTextured" title="Line Number" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="55">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button id="56">
+                    <rect key="frame" x="158" y="360" width="135" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="squareTextured" title="Line Pay" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="57">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button id="58">
+                    <rect key="frame" x="305" y="360" width="135" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="squareTextured" title="Pay Per Day" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="59">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button id="62">
+                    <rect key="frame" x="10" y="320" width="210" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="squareTextured" title="Pay Per Duty Hour" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="63">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button id="64">
+                    <rect key="frame" x="230" y="320" width="210" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="squareTextured" title="Pay Per Flight Hour" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="65">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button id="66">
+                    <rect key="frame" x="10" y="281" width="135" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="squareTextured" title="Pay Per FDP" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="67">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button id="68">
+                    <rect key="frame" x="158" y="281" width="282" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="squareTextured" title="Pay Per Time Away From Base" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="69">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button misplaced="YES" id="70">
+                    <rect key="frame" x="10" y="208" width="101" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="squareTextured" title="Block Sort" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="71">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <popUpButton horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" id="72">
+                    <rect key="frame" x="117" y="209" width="32" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" imagePosition="only" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" arrowPosition="noArrow" selectedItem="76" id="73">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="74">
+                            <items>
+                                <menuItem hidden="YES" id="76"/>
+                                <menuItem title="Item 2" id="77"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" scrollerKnobStyle="light" id="78">
+                    <rect key="frame" x="5" y="6" width="440" height="194"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <clipView key="contentView" id="DI2-ki-YR8">
+                        <rect key="frame" x="1" y="1" width="438" height="192"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="30" viewBased="YES" floatsGroupRows="NO" id="81">
+                                <rect key="frame" x="0.0" y="0.0" width="438" height="192"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <size key="intercellSpacing" width="3" height="2"/>
+                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                <tableColumns>
+                                    <tableColumn identifier="BlockSorts" width="435" minWidth="40" maxWidth="1000" id="82">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                        </tableHeaderCell>
+                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="87">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                        <prototypeCellViews>
+                                            <tableCellView identifier="Sort" id="174" customClass="SortCell">
+                                                <rect key="frame" x="1" y="1" width="435" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" id="176">
+                                                        <rect key="frame" x="-3" y="-2" width="32" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="round" title="x" bezelStyle="circular" imagePosition="above" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" id="183">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="175">
+                                                        <rect key="frame" x="25" y="1" width="245" height="24"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="184">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </subviews>
+                                                <connections>
+                                                    <outlet property="btnClose" destination="176" id="188"/>
+                                                    <outlet property="lblTitle" destination="175" id="189"/>
+                                                </connections>
+                                            </tableCellView>
+                                            <tableCellView identifier="Commutable Line-Auto" id="GHf-tp-th4" customClass="SortCell">
+                                                <rect key="frame" x="1" y="33" width="435" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" id="a69-zt-z84">
+                                                        <rect key="frame" x="-3" y="-2" width="32" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="round" title="x" bezelStyle="circular" imagePosition="above" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" id="Ozg-oK-0CO">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                    <popUpButton id="DlS-bh-Ygj">
+                                                        <rect key="frame" x="239" y="2" width="80" height="25"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <popUpButtonCell key="cell" type="bevel" title="Item 1" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" selectedItem="itb-OA-3lZ" id="Go3-51-AkA">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                            <menu key="menu" id="myc-rf-dIO">
+                                                                <items>
+                                                                    <menuItem title="Item 1" state="on" id="itb-OA-3lZ"/>
+                                                                    <menuItem title="Item 2" id="Sm0-rR-3k9"/>
+                                                                    <menuItem title="Item 3" id="2h2-6B-QJJ"/>
+                                                                </items>
+                                                            </menu>
+                                                        </popUpButtonCell>
+                                                    </popUpButton>
+                                                    <button verticalHuggingPriority="750" id="uzA-JN-TEi">
+                                                        <rect key="frame" x="20" y="0.0" width="218" height="28"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="left" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ltf-Ga-hUw">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="TitleActn:" target="GHf-tp-th4" id="Gtk-l0-v1H"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <connections>
+                                                    <outlet property="CommutableAutoTitle" destination="uzA-JN-TEi" id="v17-QW-DhQ"/>
+                                                    <outlet property="CommutableAutoValue" destination="DlS-bh-Ygj" id="o96-zX-J25"/>
+                                                    <outlet property="btnClose1" destination="a69-zt-z84" id="UY5-SW-NWP"/>
+                                                </connections>
+                                            </tableCellView>
+                                            <tableCellView identifier="CommutableManual" id="oDE-qs-cKY" customClass="SortCell">
+                                                <rect key="frame" x="1" y="65" width="435" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" id="Xbk-DY-MG3">
+                                                        <rect key="frame" x="-3" y="-2" width="32" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="round" title="x" bezelStyle="circular" imagePosition="above" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" id="pSl-yM-Smr">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                    <popUpButton id="uPg-Lm-VrV">
+                                                        <rect key="frame" x="239" y="2" width="80" height="25"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <popUpButtonCell key="cell" type="bevel" title="Item 1" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" selectedItem="Ymp-G7-JqH" id="wPS-Bk-Hxm">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                            <menu key="menu" id="04y-nI-PF8">
+                                                                <items>
+                                                                    <menuItem title="Item 1" state="on" id="Ymp-G7-JqH"/>
+                                                                    <menuItem title="Item 2" id="YUr-qH-rPs"/>
+                                                                    <menuItem title="Item 3" id="pP2-1k-Qe4"/>
+                                                                </items>
+                                                            </menu>
+                                                        </popUpButtonCell>
+                                                    </popUpButton>
+                                                    <button verticalHuggingPriority="750" id="Z2r-p6-gt5">
+                                                        <rect key="frame" x="20" y="0.0" width="218" height="28"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="left" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3Mc-yI-ode">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="ManualTitleAction:" target="oDE-qs-cKY" id="rtz-b6-eN7"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <connections>
+                                                    <outlet property="CommutableManualTitle" destination="Z2r-p6-gt5" id="EcA-wN-Hqk"/>
+                                                    <outlet property="CommutableManualValue" destination="uPg-Lm-VrV" id="mVZ-ZU-wNT"/>
+                                                    <outlet property="btnCloseManual" destination="Xbk-DY-MG3" id="U0H-iT-Uey"/>
+                                                </connections>
+                                            </tableCellView>
+                                        </prototypeCellViews>
+                                    </tableColumn>
+                                </tableColumns>
+                            </tableView>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="80">
+                        <rect key="frame" x="1" y="119" width="223" height="15"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="79">
+                        <rect key="frame" x="224" y="17" width="15" height="102"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="168">
+                    <rect key="frame" x="158" y="212" width="135" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Selected Column" drawsBackground="YES" id="169">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="170">
+                    <rect key="frame" x="305" y="212" width="135" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Manual" drawsBackground="YES" id="171">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" id="190">
+                    <rect key="frame" x="380" y="442" width="60" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="recessed" title="Clear" bezelStyle="recessed" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="191">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="systemBold" size="12"/>
+                    </buttonCell>
+                </button>
+                <button horizontalHuggingPriority="750" verticalHuggingPriority="750" id="193">
+                    <rect key="frame" x="8" y="439" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="194">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                </button>
+                <button misplaced="YES" id="3PZ-68-MAb">
+                    <rect key="frame" x="10" y="243" width="135" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="squareTextured" title="Sort By Award" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="bmL-DR-hvC">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button misplaced="YES" id="mqJ-UD-YTb">
+                    <rect key="frame" x="158" y="243" width="282" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="squareTextured" title="Sort By Submitted Bid" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="1tF-H8-ppv">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+            </subviews>
+            <point key="canvasLocation" x="323" y="330"/>
+        </customView>
+    </objects>
+</document>

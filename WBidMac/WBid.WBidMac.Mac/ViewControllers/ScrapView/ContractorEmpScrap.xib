@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="9532"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ContractorEmpScrapController">
+            <connections>
+                <outlet property="WebBrowser1" destination="axv-Jh-y7o" id="DMM-5b-tHH"/>
+                <outlet property="WebBrowser2" destination="MUY-RQ-QSz" id="4rb-MY-ZUG"/>
+                <outlet property="WebBrowser3" destination="bBC-ES-kbd" id="a6T-Sb-DbR"/>
+                <outlet property="view" destination="4" id="17"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="4" customClass="ContractorEmpScrap">
+            <rect key="frame" x="0.0" y="0.0" width="470" height="296"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <webView id="axv-Jh-y7o">
+                    <rect key="frame" x="9" y="216" width="254" height="80"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                        <nil key="identifier"/>
+                    </webPreferences>
+                </webView>
+                <webView id="MUY-RQ-QSz">
+                    <rect key="frame" x="9" y="117" width="254" height="86"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                        <nil key="identifier"/>
+                    </webPreferences>
+                </webView>
+                <webView id="bBC-ES-kbd">
+                    <rect key="frame" x="9" y="20" width="254" height="84"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                        <nil key="identifier"/>
+                    </webPreferences>
+                </webView>
+            </subviews>
+        </customView>
+    </objects>
+</document>

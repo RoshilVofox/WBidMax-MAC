@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SynchViewWindowController">
+            <connections>
+                <outlet property="bothOption" destination="fQM-4K-8Js" id="vcy-LB-2rY"/>
+                <outlet property="quickOption" destination="TCa-MZ-kfc" id="jcA-ns-fqo"/>
+                <outlet property="stateOption" destination="4fJ-FD-h37" id="HGv-oD-hsI"/>
+                <outlet property="window" destination="2" id="6"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Data Synchronisation" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" animationBehavior="default" id="2" customClass="SynchViewWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <rect key="contentRect" x="131" y="74" width="450" height="264"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" id="3">
+                <rect key="frame" x="0.0" y="0.0" width="450" height="264"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="je3-GZ-nBF">
+                        <rect key="frame" x="66" y="218" width="319" height="19"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="What do you want to synchronize with server?" id="Ldi-fa-RBe">
+                            <font key="font" metaFont="systemLight" size="15"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4fJ-FD-h37">
+                        <rect key="frame" x="198" y="174" width="61" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="Q06-LU-iGf"/>
+                        </constraints>
+                        <buttonCell key="cell" type="radio" title="STATE" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="mxc-cd-VRU">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="StateSelectionAction:" target="-2" id="tNk-Xm-B4C"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TCa-MZ-kfc">
+                        <rect key="frame" x="198" y="134" width="91" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="qZ7-ux-VTS"/>
+                        </constraints>
+                        <buttonCell key="cell" type="radio" title="QUICK SET" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="DBi-Zn-Neb">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="quicksetSelectAction:" target="-2" id="EVk-7e-um2"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fQM-4K-8Js">
+                        <rect key="frame" x="198" y="92" width="58" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="sbG-CR-nCg"/>
+                        </constraints>
+                        <buttonCell key="cell" type="radio" title="BOTH" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Ioo-r6-pGg">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="bothSelectionAction:" target="-2" id="GyH-hs-hsR"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5vM-r6-d08">
+                        <rect key="frame" x="234" y="33" width="81" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="81" id="vTg-fv-oci"/>
+                            <constraint firstAttribute="height" constant="25" id="wcJ-yu-WTc"/>
+                        </constraints>
+                        <buttonCell key="cell" type="square" title="Cancel" bezelStyle="shadowlessSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kmz-ld-kVI">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="CancelAction:" target="-2" id="dAL-u9-SVO"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0ld-FS-eqY">
+                        <rect key="frame" x="163" y="33" width="63" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="63" id="BKz-9N-P4C"/>
+                            <constraint firstAttribute="height" constant="25" id="rhd-wU-MRu"/>
+                        </constraints>
+                        <buttonCell key="cell" type="square" title="Ok" bezelStyle="shadowlessSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OsN-Ru-8Si">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="OkAction:" target="-2" id="2Gd-kV-Psf"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="5vM-r6-d08" secondAttribute="trailing" constant="135" id="20P-Wt-XSZ"/>
+                    <constraint firstItem="0ld-FS-eqY" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="163" id="3GU-Tf-9Zd"/>
+                    <constraint firstAttribute="trailing" secondItem="4fJ-FD-h37" secondAttribute="trailing" constant="193" id="3p6-Ej-EGV"/>
+                    <constraint firstItem="je3-GZ-nBF" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" id="DvH-Wk-flq"/>
+                    <constraint firstItem="je3-GZ-nBF" firstAttribute="top" secondItem="3" secondAttribute="top" constant="27" id="LqB-eI-g8t"/>
+                    <constraint firstAttribute="trailing" secondItem="fQM-4K-8Js" secondAttribute="trailing" constant="196" id="M5T-Hy-Ncc"/>
+                    <constraint firstItem="0ld-FS-eqY" firstAttribute="top" secondItem="fQM-4K-8Js" secondAttribute="bottom" constant="35" id="MZu-a3-t3e"/>
+                    <constraint firstItem="5vM-r6-d08" firstAttribute="top" secondItem="fQM-4K-8Js" secondAttribute="bottom" constant="35" id="ObR-ic-RXz"/>
+                    <constraint firstItem="4fJ-FD-h37" firstAttribute="top" secondItem="je3-GZ-nBF" secondAttribute="bottom" constant="27" id="Urb-QC-XCW"/>
+                    <constraint firstItem="fQM-4K-8Js" firstAttribute="top" secondItem="TCa-MZ-kfc" secondAttribute="bottom" constant="26" id="ZpD-64-Dzp"/>
+                    <constraint firstAttribute="trailing" secondItem="TCa-MZ-kfc" secondAttribute="trailing" constant="163" id="jXp-wD-dj3"/>
+                    <constraint firstItem="TCa-MZ-kfc" firstAttribute="top" secondItem="4fJ-FD-h37" secondAttribute="bottom" constant="24" id="k23-nG-M2H"/>
+                    <constraint firstItem="fQM-4K-8Js" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="199" id="o46-vm-Z7X"/>
+                    <constraint firstItem="TCa-MZ-kfc" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="199" id="oR6-UD-nEi"/>
+                    <constraint firstItem="4fJ-FD-h37" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="199" id="rvm-Es-dId"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="127" y="89"/>
+        </window>
+    </objects>
+</document>

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46B1E192-3E6E-4DBE-92C4-61D7A36D9B02}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WBid.WBidiPad.PortableLibrary</RootNamespace>
+    <AssemblyName>WBid.WBidiPad.PortableLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile24</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLogic\CaculateVacationDetails.cs" />
+    <Compile Include="BusinessLogic\CalculateLineProperties.cs" />
+    <Compile Include="BusinessLogic\CalculateTripProperties.cs" />
+    <Compile Include="BusinessLogic\CalendarViewBL.cs" />
+    <Compile Include="BusinessLogic\ConstraintBL.cs" />
+    <Compile Include="BusinessLogic\ConstraintCalculations.cs" />
+    <Compile Include="BusinessLogic\DSTProperties.cs" />
+    <Compile Include="BusinessLogic\ErrorHandling.cs" />
+    <Compile Include="BusinessLogic\FABidEditorOperations.cs" />
+    <Compile Include="BusinessLogic\LineSummaryBL.cs" />
+    <Compile Include="BusinessLogic\NetworkPlanData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessLogic\PrepareModernBidLineView.cs" />
+    <Compile Include="BusinessLogic\RecalcalculateLineProperties.cs" />
+    <Compile Include="BusinessLogic\ReCalculateLinePropertiesForOverlapCorrection.cs" />
+    <Compile Include="BusinessLogic\SortCalculation.cs" />
+    <Compile Include="BusinessLogic\StateManagement.cs" />
+    <Compile Include="BusinessLogic\TripViewBL.cs" />
+    <Compile Include="BusinessLogic\VacationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessLogic\WeightBL.cs" />
+    <Compile Include="BusinessLogic\WeightCalculation.cs" />
+    <Compile Include="Parser\LineParser.cs" />
+    <Compile Include="Parser\TripParser.cs" />
+    <Compile Include="Position.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProtoSerailizer.cs" />
+    <Compile Include="Test.cs" />
+    <Compile Include="Utility\Helper.cs" />
+    <Compile Include="Utility\LineOperations.cs" />
+    <Compile Include="Utility\WBidCollection.cs" />
+    <Compile Include="Utility\CompareState.cs" />
+    <Compile Include="BusinessLogic\SmartSyncLogic.cs" />
+    <Compile Include="Utility\QuicksetStateDetails.cs" />
+    <Compile Include="BusinessLogic\CalculateMIL.cs" />
+    <Compile Include="Utility\ExportPairingDetails.cs" />
+    <Compile Include="BusinessLogic\BidAutomatorCalculations.cs" />
+    <Compile Include="BusinessLogic\BidAutoHelper.cs" />
+    <Compile Include="BusinessLogic\FVVacation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\" />
+    <Folder Include="SWA\" />
+    <Folder Include="ThirdParty\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
+    <None Include="ThirdParty\Newtonsoft.Json.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Reference Include="protobuf-net">
+      <HintPath>..\WBid.WBidiPad.Model\ThirdParty\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>ThirdParty\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WBid.WBidiPad.Core\WBid.WBidiPad.Core.csproj">
+      <Project>{AA94679D-7332-4128-8F7D-043D2E35AA78}</Project>
+      <Name>WBid.WBidiPad.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WBid.WBidiPad.Model\WBid.WBidiPad.Model.csproj">
+      <Project>{C90565E2-1E06-4036-9B1E-A6C98D41FEE8}</Project>
+      <Name>WBid.WBidiPad.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

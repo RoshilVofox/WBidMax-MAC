@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="OvernightCitiesDetailsController">
+            <connections>
+                <outlet property="ScrollViewOvernightCities" destination="zcM-tF-QFz" id="vZQ-un-d4A"/>
+                <outlet property="ViewContent" destination="Cvb-Bn-VOT" id="cPV-a2-9C0"/>
+                <outlet property="ViewOvernightCities" destination="Dxg-8v-SAe" id="obu-5H-6GB"/>
+                <outlet property="btnClear" destination="dNN-cj-VHw" id="SLw-W7-fvl"/>
+                <outlet property="btnDone" destination="Esu-X7-Yqd" id="upt-dC-eiK"/>
+                <outlet property="view" destination="4" id="17"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="4" customClass="OvernightCitiesDetails">
+            <rect key="frame" x="0.0" y="0.0" width="629" height="629"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <colorWell bordered="NO" enabled="NO" id="qMW-QR-hNX">
+                    <rect key="frame" x="0.0" y="589" width="629" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="color" red="0.54117647059999996" green="0.77647058820000003" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                </colorWell>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="wCf-f4-rCc">
+                    <rect key="frame" x="226" y="600" width="176" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Over Night Cities" id="feW-gq-CzV">
+                        <font key="font" size="15" name=".HelveticaNeueDeskInterface-Bold"/>
+                        <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="AAb-Sm-OcD">
+                    <rect key="frame" x="17" y="528" width="594" height="46"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="1st touch is green YES. 2nd touch is red No. 3rd touch is off Black cities has no overnights in this bid period" id="EzF-Rt-m0I">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView id="Dxg-8v-SAe">
+                    <rect key="frame" x="15" y="-24" width="598" height="544"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                </customView>
+                <button verticalHuggingPriority="750" id="yEI-3s-r2F">
+                    <rect key="frame" x="119" y="37" width="176" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rkI-Er-LDB">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                    </buttonCell>
+                    <connections>
+                        <action selector="FunCancelAction:" target="-2" id="NN8-k3-2gv"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" id="Esu-X7-Yqd">
+                    <rect key="frame" x="335" y="37" width="176" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="Done" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o5s-Kj-w8o">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="funDoneActions:" target="-2" id="0wZ-Ki-0yN"/>
+                    </connections>
+                </button>
+                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" id="zcM-tF-QFz">
+                    <rect key="frame" x="7" y="78" width="618" height="442"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <clipView key="contentView" id="Cvb-Bn-VOT">
+                        <rect key="frame" x="1" y="1" width="601" height="425"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view id="bRx-R1-YHT">
+                                <rect key="frame" x="0.0" y="0.0" width="601" height="425"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </view>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="EwQ-AS-H2Y">
+                        <rect key="frame" x="1" y="426" width="601" height="15"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="1fx-32-jkH">
+                        <rect key="frame" x="602" y="1" width="15" height="425"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+                <button id="dNN-cj-VHw">
+                    <rect key="frame" x="7" y="598" width="103" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="squareTextured" title="Clear" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="Ngl-vm-Sgt">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="funClearAction:" target="-2" id="0nq-Og-fkT"/>
+                    </connections>
+                </button>
+            </subviews>
+            <point key="canvasLocation" x="413.5" y="443.5"/>
+        </customView>
+    </objects>
+</document>

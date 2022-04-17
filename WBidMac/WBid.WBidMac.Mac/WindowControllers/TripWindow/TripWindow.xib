@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="TripWindowController">
+            <connections>
+                <outlet property="btnExportToOutLook" destination="4P8-Ty-QZ8" id="Wy8-sA-ftX"/>
+                <outlet property="btnFFDO" destination="qcR-RD-nZC" id="ZcD-Mi-zvr"/>
+                <outlet property="btnPrint" destination="bVc-fM-oKd" id="dyF-Ww-Llg"/>
+                <outlet property="tblTrip" destination="DLc-JU-C5i" id="GuA-oy-DFB"/>
+                <outlet property="window" destination="2" id="6"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Trip" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" animationBehavior="default" id="2" customClass="TripWindow">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES"/>
+            <rect key="contentRect" x="850" y="74" width="430" height="450"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+            <value key="minSize" type="size" width="430" height="450"/>
+            <value key="maxSize" type="size" width="430" height="450"/>
+            <view key="contentView" id="3">
+                <rect key="frame" x="0.0" y="0.0" width="430" height="450"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="16" horizontalPageScroll="10" verticalLineScroll="16" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="FST-Ba-pCv">
+                        <rect key="frame" x="-1" y="-1" width="432" height="452"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <clipView key="contentView" id="onV-ZB-98P">
+                            <rect key="frame" x="1" y="1" width="430" height="450"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="none" selectionHighlightStyle="none" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="15" viewBased="YES" id="DLc-JU-C5i">
+                                    <rect key="frame" x="0.0" y="0.0" width="430" height="450"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <size key="intercellSpacing" width="3" height="1"/>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                    <tableColumns>
+                                        <tableColumn editable="NO" width="417" minWidth="417" maxWidth="417" id="O5h-br-NqA">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                            </tableHeaderCell>
+                                            <textFieldCell key="dataCell" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="bL7-XO-SMV">
+                                                <font key="font" size="11" name="Courier"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                            <prototypeCellViews>
+                                                <tableCellView identifier="Trip" id="KZD-Fr-hNT">
+                                                    <rect key="frame" x="1" y="0.0" width="417" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="9D3-Av-dkj">
+                                                            <rect key="frame" x="0.0" y="0.0" width="417" height="15"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Table View Cell" drawsBackground="YES" id="6T9-DK-XFL">
+                                                                <font key="font" size="12" name="Courier"/>
+                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                    </subviews>
+                                                    <connections>
+                                                        <outlet property="textField" destination="9D3-Av-dkj" id="i1V-Kj-5xO"/>
+                                                    </connections>
+                                                </tableCellView>
+                                            </prototypeCellViews>
+                                        </tableColumn>
+                                    </tableColumns>
+                                </tableView>
+                            </subviews>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="HDP-7k-Z2E">
+                            <rect key="frame" x="1" y="119" width="223" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="bd8-2a-bkw">
+                            <rect key="frame" x="224" y="17" width="15" height="102"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                </subviews>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="82EB2271-0233-4F4B-BB76-DB37B3C4144A" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="HvK-XZ-jFN">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Tl1-J6-Xtr"/>
+                    <toolbarItem implicitItemIdentifier="23AF30C1-6032-47A6-8B76-0C43CACBB54A" label="Take Print" paletteLabel="Take Print" id="JVw-no-Fie">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="60" height="19"/>
+                        <size key="maxSize" width="60" height="19"/>
+                        <button key="view" verticalHuggingPriority="750" id="bVc-fM-oKd">
+                            <rect key="frame" x="0.0" y="14" width="60" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundRect" title="Print" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PK1-Z7-ble">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="cellTitle"/>
+                            </buttonCell>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="0C9967BA-405F-47F6-B9AB-30B520152440" label="Export" paletteLabel="Export" id="hu2-U1-NWT">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="60" height="19"/>
+                        <size key="maxSize" width="116" height="19"/>
+                        <button key="view" verticalHuggingPriority="750" id="4P8-Ty-QZ8">
+                            <rect key="frame" x="0.0" y="14" width="116" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundRect" title="Export to Outlook" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oUE-CQ-lcj">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="cellTitle"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="ExportToOutLookFunctionality:" target="-2" id="qwk-hs-99d"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="69638BDA-8AE8-4DE7-ACC8-AF90E40DDC21" label="Export to FFDO" paletteLabel="Export to FFDO" id="Lvf-wk-Lel">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="60" height="19"/>
+                        <size key="maxSize" width="60" height="20"/>
+                        <button key="view" verticalHuggingPriority="750" id="qcR-RD-nZC">
+                            <rect key="frame" x="14" y="14" width="60" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundRect" title="FFDO" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NYQ-Fn-SY7">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="cellTitle"/>
+                            </buttonCell>
+                        </button>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="Tl1-J6-Xtr"/>
+                    <toolbarItem reference="hu2-U1-NWT"/>
+                    <toolbarItem reference="Lvf-wk-Lel"/>
+                    <toolbarItem reference="JVw-no-Fie"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <point key="canvasLocation" x="139" y="298"/>
+        </window>
+    </objects>
+</document>

@@ -1,0 +1,245 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C90565E2-1E06-4036-9B1E-A6C98D41FEE8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WBid.WBidiPad.Model</RootNamespace>
+    <AssemblyName>WBid.WBidiPad.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile24</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AdditionalColumns.cs" />
+    <Compile Include="AmPmConfigure.cs" />
+    <Compile Include="AvoidanceBids.cs" />
+    <Compile Include="BackgroundColor.cs" />
+    <Compile Include="BaseUpdates.cs" />
+    <Compile Include="BidDetails.cs" />
+    <Compile Include="BidLineTemplate.cs" />
+    <Compile Include="BidPeriod.cs" />
+    <Compile Include="BidPrep.cs" />
+    <Compile Include="BidRound.cs" />
+    <Compile Include="BindingManager.cs" />
+    <Compile Include="BlockSort.cs" />
+    <Compile Include="BuddyBidderBid.cs" />
+    <Compile Include="BuddyBids.cs" />
+    <Compile Include="CalendarData.cs" />
+    <Compile Include="CheckBoxState.cs" />
+    <Compile Include="City.cs" />
+    <Compile Include="CityPair.cs" />
+    <Compile Include="ColumnDefinition.cs" />
+    <Compile Include="ConstraintPoints.cs" />
+    <Compile Include="CorrectionParams.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="DataColumn.cs" />
+    <Compile Include="DateHelper.cs" />
+    <Compile Include="Day.cs" />
+    <Compile Include="DayOfMonth.cs" />
+    <Compile Include="DaysOfMonthHelper.cs" />
+    <Compile Include="DeadheadCity.cs" />
+    <Compile Include="DeadHeadParameter.cs" />
+    <Compile Include="DeadHeadResult.cs" />
+    <Compile Include="Domicile.cs" />
+    <Compile Include="DutyPeriod.cs" />
+    <Compile Include="Enumarations.cs" />
+    <Compile Include="Equipment.cs" />
+    <Compile Include="EquipType.cs" />
+    <Compile Include="Flight.cs" />
+    <Compile Include="FlightPlan.cs" />
+    <Compile Include="FlightRouteDetails.cs" />
+    <Compile Include="ForceLine.cs" />
+    <Compile Include="Hotel.cs" />
+    <Compile Include="INIUpdates.cs" />
+    <Compile Include="IntlNonConusCity.cs" />
+    <Compile Include="Line.cs" />
+    <Compile Include="LineData.cs" />
+    <Compile Include="LineInfo.cs" />
+    <Compile Include="LineOrders.cs" />
+    <Compile Include="LineProperties.cs" />
+    <Compile Include="LineSip.cs" />
+    <Compile Include="MenuBarButtonStatus.cs" />
+    <Compile Include="MiscellaneousTab.cs" />
+    <Compile Include="OverlapData.cs" />
+    <Compile Include="PairingExport.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RCtimes.cs" />
+    <Compile Include="RecentFiles.cs" />
+    <Compile Include="ReparseParameters.cs" />
+    <Compile Include="RestPeriod.cs" />
+    <Compile Include="SeniorityListItem.cs" />
+    <Compile Include="SeniorityListMember.cs" />
+    <Compile Include="Serializable.cs" />
+    <Compile Include="Sip.cs" />
+    <Compile Include="SipDutyPeriod.cs" />
+    <Compile Include="ConstraintParams.cs" />
+    <Compile Include="SourceHotel.cs" />
+    <Compile Include="StateSync.cs" />
+    <Compile Include="State\Constraints\AMPMConstriants.cs" />
+    <Compile Include="State\Constraints\BulkOvernightCityCx.cs" />
+    <Compile Include="State\Constraints\Constraints.cs" />
+    <Compile Include="State\Constraints\Cx2Parameter.cs" />
+    <Compile Include="State\Constraints\Cx3Parameter.cs" />
+    <Compile Include="State\Constraints\Cx4Parameter.cs" />
+    <Compile Include="State\Constraints\CxCommutableLine.cs" />
+    <Compile Include="State\Constraints\CxPartialDaysOff.cs" />
+    <Compile Include="State\Constraints\DaysOfMonthCx.cs" />
+    <Compile Include="State\Constraints\DaysOfWeekConstraints.cs" />
+    <Compile Include="State\Constraints\PostionConstraint.cs" />
+    <Compile Include="State\Constraints\TripLengthConstraints.cs" />
+    <Compile Include="State\CxWtState.cs" />
+    <Compile Include="State\SortDetails.cs" />
+    <Compile Include="State\Times.cs" />
+    <Compile Include="State\Weights\DaysOfMonthWt.cs" />
+    <Compile Include="State\Weights\Weights.cs" />
+    <Compile Include="State\Weights\Wt2Parameter.cs" />
+    <Compile Include="State\Weights\Wt3Parameter.cs" />
+    <Compile Include="State\Weights\Wt4Parameters.cs" />
+    <Compile Include="State\Weights\WtAircraftChange.cs" />
+    <Compile Include="State\Weights\WtCommutableLine.cs" />
+    <Compile Include="State\Weights\WtDaysOfWeek.cs" />
+    <Compile Include="State\Weights\WtDeadHead.cs" />
+    <Compile Include="State\Weights\WtDeadHeadFirstOrLast.cs" />
+    <Compile Include="State\Weights\WtDutyPeriod.cs" />
+    <Compile Include="State\Weights\WtEquipment.cs" />
+    <Compile Include="State\Weights\WtFlightTime.cs" />
+    <Compile Include="State\Weights\WtGroundTime.cs" />
+    <Compile Include="State\Weights\WtKeyValue.cs" />
+    <Compile Include="State\Weights\WtLegsPerPairing.cs" />
+    <Compile Include="State\Weights\WtPartialDaysOff.cs" />
+    <Compile Include="State\Weights\WtPerDiem.cs" />
+    <Compile Include="State\Weights\WtRest.cs" />
+    <Compile Include="SubmitBid.cs" />
+    <Compile Include="TagDetails.cs" />
+    <Compile Include="TextColor.cs" />
+    <Compile Include="Theme.cs" />
+    <Compile Include="Trip.cs" />
+    <Compile Include="TripData.cs" />
+    <Compile Include="TripInfo.cs" />
+    <Compile Include="TripMultiVacData.cs" />
+    <Compile Include="Updates.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserInformation.cs" />
+    <Compile Include="Vacation.cs" />
+    <Compile Include="VacationDetails.cs" />
+    <Compile Include="VacationDutyPeriod.cs" />
+    <Compile Include="VacationFlight.cs" />
+    <Compile Include="VacationGrandTotal.cs" />
+    <Compile Include="VacationRig.cs" />
+    <Compile Include="VacationStateDutyPeriod.cs" />
+    <Compile Include="VacationStateFlight.cs" />
+    <Compile Include="VacationStateLine.cs" />
+    <Compile Include="VacationStateTrip.cs" />
+    <Compile Include="VacationTrip.cs" />
+    <Compile Include="Vacation\DutyDayTable.cs" />
+    <Compile Include="Vacation\FdpTable.cs" />
+    <Compile Include="Vacation\MasterFdpTable.cs" />
+    <Compile Include="Vacation\VacationCorrectionParams.cs" />
+    <Compile Include="VAPHelper.cs" />
+    <Compile Include="VDvsRCdata.cs" />
+    <Compile Include="VersionInfo.cs" />
+    <Compile Include="WBidINI.cs" />
+    <Compile Include="SWA\DownloadedFileInfo.cs" />
+    <Compile Include="SWA\DownloadInfo.cs" />
+    <Compile Include="WBidIntialState.cs" />
+    <Compile Include="WBidStateCollection.cs" />
+    <Compile Include="WBidUpdate.cs" />
+    <Compile Include="WbidUser.cs" />
+    <Compile Include="Week.cs" />
+    <Compile Include="WeightPoints.cs" />
+    <Compile Include="WorkBlockDetails.cs" />
+    <Compile Include="WorkDaysOfBidLine.cs" />
+    <Compile Include="MaintananceData.cs" />
+    <Compile Include="QuickSets.cs" />
+    <Compile Include="AppliedStates.cs" />
+    <Compile Include="Vacation\AppliedStateType.cs" />
+    <Compile Include="MILParams.cs" />
+    <Compile Include="TripMultiMILData.cs" />
+    <Compile Include="SplitPointCities.cs" />
+    <Compile Include="MILData.cs" />
+    <Compile Include="HistoricalBidData.cs" />
+    <Compile Include="HotelDetails.cs" />
+    <Compile Include="MainWindowSize.cs" />
+    <Compile Include="AppointmentDetails.cs" />
+    <Compile Include="CommuteTime.cs" />
+    <Compile Include="FtCommutableLine.cs" />
+    <Compile Include="WtCommutableLineAuto.cs" />
+    <Compile Include="State\Constraints\DaysofMonth.cs" />
+    <Compile Include="State\Constraints\CxTripBlockLength.cs" />
+    <Compile Include="State\Constraints\CxLine.cs" />
+    <Compile Include="State\Constraints\CxDays.cs" />
+    <Compile Include="BidAutomator.cs" />
+    <Compile Include="BidAutoItem.cs" />
+    <Compile Include="BidAutoGroup.cs" />
+    <Compile Include="State\Constraints\OverNightCitiesCx.cs" />
+    <Compile Include="CAPInputParameter.cs" />
+    <Compile Include="CAPOutputParameter.cs" />
+    <Compile Include="State\Constraints\Commutability.cs" />
+    <Compile Include="Ratio.cs" />
+    <Compile Include="SenListFormat.cs" />
+    <Compile Include="FVVacationClass.cs" />
+    <Compile Include="State\Constraints\ReportReleases.cs" />
+    <Compile Include="ReportReleaseData.cs" />
+    <Compile Include="Vacation\VacDpForRigDist.cs" />
+    <Compile Include="BidAwardDetails.cs" />
+    <Compile Include="BidSubmittedData.cs" />
+    <Compile Include="MonthlyBidDetails.cs" />
+    <Compile Include="MissedTripResponseModel.cs" />
+    <Compile Include="PingResponseModel.cs" />
+    <Compile Include="WBGetStateDTO.cs" />
+    <Compile Include="StateQuickSetSyncDTO.cs" />
+    <Compile Include="WBStateInfoDTO.cs" />
+    <Compile Include="SubmittedDataRaw.cs" />
+    <Compile Include="AwardDetails.cs" />
+    <Compile Include="UserBidDetails.cs" />
+    <Compile Include="Weekday.cs" />
+    <Compile Include="State\Weights\Wt1Parameters.cs" />
+    <Compile Include="CustomServiceResponse.cs" />
+    <Compile Include="RegistrationDetails.cs" />
+    <Compile Include="ApplicationLoadData.cs" />
+    <Compile Include="ApplicationData.cs" />
+    <Compile Include="VacationValueDifferenceInputDTO.cs" />
+    <Compile Include="VacationValueDifferenceOutputDTO.cs" />
+    <Compile Include="FlightDataChangeVacValues.cs" />
+    <Compile Include="VacationInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="protobuf-net">
+      <HintPath>ThirdParty\protobuf-net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enum\" />
+    <Folder Include="ThirdParty\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

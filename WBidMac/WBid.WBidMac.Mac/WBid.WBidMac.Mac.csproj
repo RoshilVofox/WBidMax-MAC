@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{C299069B-0850-43EF-98E6-27E9C9706ED9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>WBid.WBidMac.Mac</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>WBidMax</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Developer ID Application</CodeSigningKey>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+    <PackageSigningKey>Developer ID Installer</PackageSigningKey>
+    <I18n>west</I18n>
+    <MonoBundlingExtraArgs>-i18n=west</MonoBundlingExtraArgs>
+    <UseRefCounting>false</UseRefCounting>
+    <XamMacArch>x86_64</XamMacArch>
+    <Profiling>false</Profiling>
+    <CodeSignProvision></CodeSignProvision>
+    <AOTMode>None</AOTMode>
+    <UseHardenedRuntime>true</UseHardenedRuntime>
+    <CodeSignEntitlements>Info.plist</CodeSignEntitlements>
+    <LinkMode>None</LinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <CodeSigningKey>Developer ID Application: WBID, LLC (44J23FC632)</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <CreatePackage>true</CreatePackage>
+    <PackageSigningKey>3rd Party Mac Developer Installer: WBID, LLC (44J23FC632)</PackageSigningKey>
+    <I18n>west</I18n>
+    <MonoBundlingExtraArgs>-i18n=west</MonoBundlingExtraArgs>
+    <UseRefCounting>false</UseRefCounting>
+    <XamMacArch>x86_64</XamMacArch>
+    <Profiling>false</Profiling>
+    <AOTMode>None</AOTMode>
+    <LinkMode>None</LinkMode>
+    <UseHardenedRuntime>true</UseHardenedRuntime>
+    <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <PackageSigningKey>3rd Party Mac Developer Installer: WBID, LLC (44J23FC632)</PackageSigningKey>
+    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>3rd Party Mac Developer Application: WBID, LLC (44J23FC632)</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnablePackageSigning>true</EnablePackageSigning>
+    <CodeSignProvision>Automatic</CodeSignProvision>
+    <I18n>west</I18n>
+    <MonoBundlingExtraArgs>-i18n=west</MonoBundlingExtraArgs>
+    <UseRefCounting>false</UseRefCounting>
+    <Profiling>false</Profiling>
+    <AOTMode>None</AOTMode>
+    <UseHardenedRuntime>true</UseHardenedRuntime>
+    <LinkMode>None</LinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug</OutputPath>
+    <DefineConstants></DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <HttpClientHandler>HttpClientHandler</HttpClientHandler>
+    <LinkMode>None</LinkMode>
+    <XamMacArch>x86_64</XamMacArch>
+    <AssemblyName>WBid.WBidMac.Mac</AssemblyName>
+    <PlatformTarget>x86</PlatformTarget>
+    <AOTMode>None</AOTMode>
+    <UseHardenedRuntime>true</UseHardenedRuntime>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <MonoBundlingExtraArgs></MonoBundlingExtraArgs>
+    <EnableSGenConc></EnableSGenConc>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <HttpClientHandler>HttpClientHandler</HttpClientHandler>
+    <LinkMode>None</LinkMode>
+    <XamMacArch></XamMacArch>
+    <AssemblyName>WBid.WBidMac.Mac</AssemblyName>
+    <PlatformTarget>x86</PlatformTarget>
+    <AOTMode>None</AOTMode>
+    <UseHardenedRuntime>true</UseHardenedRuntime>
+    <EnableCodeSigning>false</EnableCodeSigning>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>ThrirdParty\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="Xamarin.Mac" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.0\lib\netstandard2.1\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.9\lib\netstandard2.0\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\netstandard1.3\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.5.0.0\lib\netstandard2.1\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.commons">
+      <HintPath>..\packages\itext7.commons.7.2.1\lib\netstandard2.0\itext.commons.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DotNet.PlatformAbstractions">
+      <HintPath>..\packages\Microsoft.DotNet.PlatformAbstractions.1.1.0\lib\netstandard1.3\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyModel">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyModel.1.1.0\lib\netstandard1.6\Microsoft.Extensions.DependencyModel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes">
+      <HintPath>..\packages\itext7.7.2.1\lib\netstandard2.0\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms">
+      <HintPath>..\packages\itext7.7.2.1\lib\netstandard2.0\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io">
+      <HintPath>..\packages\itext7.7.2.1\lib\netstandard2.0\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel">
+      <HintPath>..\packages\itext7.7.2.1\lib\netstandard2.0\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout">
+      <HintPath>..\packages\itext7.7.2.1\lib\netstandard2.0\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa">
+      <HintPath>..\packages\itext7.7.2.1\lib\netstandard2.0\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign">
+      <HintPath>..\packages\itext7.7.2.1\lib\netstandard2.0\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser">
+      <HintPath>..\packages\itext7.7.2.1\lib\netstandard2.0\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg">
+      <HintPath>..\packages\itext7.7.2.1\lib\netstandard2.0\itext.svg.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="ViewControllers\" />
+    <Folder Include="ViewControllers\SummaryView\" />
+    <Folder Include="ViewControllers\BidLineView\" />
+    <Folder Include="ViewControllers\ModernView\" />
+    <Folder Include="WindowControllers\" />
+    <Folder Include="WindowControllers\MainWindow\" />
+    <Folder Include="WindowControllers\HomeWindow\" />
+    <Folder Include="WindowControllers\NewBidWindow\" />
+    <Folder Include="Utility\" />
+    <Folder Include="ThrirdParty\" />
+    <Folder Include="WindowControllers\UserRegistration\" />
+    <Folder Include="Common\" />
+    <Folder Include="WindowControllers\DownloadBidWindow\" />
+    <Folder Include="WindowControllers\CalendarWindow\" />
+    <Folder Include="WindowControllers\TripWindow\" />
+    <Folder Include="WindowControllers\SubmitWindow\" />
+    <Folder Include="WindowControllers\QueryWindow\" />
+    <Folder Include="ViewControllers\ChangeEmployee\" />
+    <Folder Include="ViewControllers\ChangeAvoidance\" />
+    <Folder Include="ViewControllers\ChangeBuddy\" />
+    <Folder Include="WindowControllers\FAPositionChoice\" />
+    <Folder Include="WindowControllers\BidEditorPrep\" />
+    <Folder Include="WindowControllers\BidEditorFA\" />
+    <Folder Include="WindowControllers\BidEditorPilot\" />
+    <Folder Include="WindowControllers\ViewFile\" />
+    <Folder Include="WindowControllers\GetAwards\" />
+    <Folder Include="ViewControllers\LoginView\" />
+    <Folder Include="ViewControllers\OverlayView\" />
+    <Folder Include="WindowControllers\CSW\" />
+    <Folder Include="ViewControllers\ConstraintsView\" />
+    <Folder Include="WindowControllers\FileWindow\" />
+    <Folder Include="ViewControllers\SortsView\" />
+    <Folder Include="ViewControllers\WeightsVew\" />
+    <Folder Include="WindowControllers\Configuration\" />
+    <Folder Include="ViewControllers\EOMFAView\" />
+    <Folder Include="ViewControllers\BidReceiptView\" />
+    <Folder Include="ViewControllers\TestVacationView\" />
+    <Folder Include="WindowControllers\ContactUsWindow\" />
+    <Folder Include="WindowControllers\HelpWindow\" />
+    <Folder Include="Resources\Help Files\" />
+    <Folder Include="ViewControllers\QAEnvironmentView\" />
+    <Folder Include="ViewControllers\SynchConflictView\" />
+    <Folder Include="ViewControllers\ScrapView\" />
+    <Folder Include="WindowControllers\Invisible\" />
+    <Folder Include="WindowControllers\Pairing Window\" />
+    <Folder Include="WindowControllers\QuickSetWindow\" />
+    <Folder Include="WindowControllers\QuickSetDetail\" />
+    <Folder Include="ViewControllers\MILConfigView\" />
+    <Folder Include="WindowControllers\BidAutomator\" />
+    <Folder Include="ViewControllers\FilterView\" />
+    <Folder Include="ViewControllers\BASortView\" />
+    <Folder Include="WindowControllers\BA Group Details\" />
+    <Folder Include="WindowControllers\View CAP\" />
+    <Folder Include="Resources\WindowControllers\" />
+    <Folder Include="ViewControllers\Ratio\" />
+    <Folder Include="WindowControllers\SynchView\" />
+    <Folder Include="WindowControllers\SynchSelectionView\" />
+    <Folder Include="WindowControllers\UserLogin\" />
+    <Folder Include="WindowControllers\UserUpdateInfo\" />
+    <Folder Include="WindowControllers\UserAccoutDifference\" />
+    <Folder Include="WindowControllers\MonthToMonthAlert\" />
+    <Folder Include="WindowControllers\CustomAlert\" />
+    <Folder Include="ViewControllers\CustomAlertView\" />
+    <Folder Include="WindowControllers\InitialLogin\" />
+    <Folder Include="WindowControllers\LoginNew\" />
+    <Folder Include="WindowControllers\VacationDifference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SummaryView\SummaryView.cs" />
+    <Compile Include="ViewControllers\SummaryView\SummaryView.designer.cs">
+      <DependentUpon>SummaryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SummaryView\SummaryViewController.cs" />
+    <Compile Include="ViewControllers\BidLineView\BidLineView.cs" />
+    <Compile Include="ViewControllers\BidLineView\BidLineViewController.cs" />
+    <Compile Include="ViewControllers\BidLineView\BidLineView.designer.cs">
+      <DependentUpon>BidLineView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ModernView\ModernView.cs" />
+    <Compile Include="ViewControllers\ModernView\ModernViewController.cs" />
+    <Compile Include="ViewControllers\ModernView\ModernView.designer.cs">
+      <DependentUpon>ModernView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\MainWindow\MainWindow.cs" />
+    <Compile Include="WindowControllers\MainWindow\MainWindow.designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\MainWindow\MainWindowController.cs" />
+    <Compile Include="WindowControllers\HomeWindow\HomeWindow.cs" />
+    <Compile Include="WindowControllers\HomeWindow\HomeWindowController.cs" />
+    <Compile Include="WindowControllers\HomeWindow\HomeWindow.designer.cs">
+      <DependentUpon>HomeWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\NewBidWindow\NewBidWindow.cs" />
+    <Compile Include="WindowControllers\NewBidWindow\NewBidWindowController.cs" />
+    <Compile Include="WindowControllers\NewBidWindow\NewBidWindow.designer.cs">
+      <DependentUpon>NewBidWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewBidView.cs" />
+    <Compile Include="NewBidView.designer.cs">
+      <DependentUpon>NewBidView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewBidViewController.cs" />
+    <Compile Include="NewBidViewController.designer.cs">
+      <DependentUpon>NewBidViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\FileOperations.cs" />
+    <Compile Include="Utility\ManageVacationColumns.cs" />
+    <Compile Include="Utility\PraseScrapedTripDetails.cs" />
+    <Compile Include="Utility\Reachability.cs" />
+    <Compile Include="Utility\ReparseBL.cs" />
+    <Compile Include="Utility\ServiceUtil.cs" />
+    <Compile Include="Utility\WBidHelper.cs" />
+    <Compile Include="Utility\WBidLogEvent.cs" />
+    <Compile Include="Utility\WBidMail.cs" />
+    <Compile Include="ThrirdParty\KeychainHelpers.cs" />
+    <Compile Include="NetworkPlanService.cs" />
+    <Compile Include="PushService.cs" />
+    <Compile Include="WindowControllers\UserRegistration\UserRegistrationWindow.cs" />
+    <Compile Include="WindowControllers\UserRegistration\UserRegistrationWindowController.cs" />
+    <Compile Include="WindowControllers\UserRegistration\UserRegistrationWindow.designer.cs">
+      <DependentUpon>UserRegistrationWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\CommonClass.cs" />
+    <Compile Include="WindowControllers\DownloadBidWindow\DownloadBidWindow.cs" />
+    <Compile Include="WindowControllers\DownloadBidWindow\DownloadBidWindowController.cs" />
+    <Compile Include="WindowControllers\DownloadBidWindow\DownloadBidWindow.designer.cs">
+      <DependentUpon>DownloadBidWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\CalendarWindow\CalendarWindow.cs" />
+    <Compile Include="WindowControllers\CalendarWindow\CalendarWindowController.cs" />
+    <Compile Include="WindowControllers\CalendarWindow\CalendarWindow.designer.cs">
+      <DependentUpon>CalendarWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\TripWindow\TripWindow.cs" />
+    <Compile Include="WindowControllers\TripWindow\TripWindowController.cs" />
+    <Compile Include="WindowControllers\TripWindow\TripWindow.designer.cs">
+      <DependentUpon>TripWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\SubmitWindow\SubmitWindow.cs" />
+    <Compile Include="WindowControllers\SubmitWindow\SubmitWindowController.cs" />
+    <Compile Include="WindowControllers\SubmitWindow\SubmitWindow.designer.cs">
+      <DependentUpon>SubmitWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\QueryWindow\QueryWindow.cs" />
+    <Compile Include="WindowControllers\QueryWindow\QueryWindowController.cs" />
+    <Compile Include="WindowControllers\QueryWindow\QueryWindow.designer.cs">
+      <DependentUpon>QueryWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ChangeEmployee\ChangeEmployeeView.cs" />
+    <Compile Include="ViewControllers\ChangeEmployee\ChangeEmployeeViewController.cs" />
+    <Compile Include="ViewControllers\ChangeEmployee\ChangeEmployeeView.designer.cs">
+      <DependentUpon>ChangeEmployeeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ChangeAvoidance\ChangeAvoidanceView.cs" />
+    <Compile Include="ViewControllers\ChangeAvoidance\ChangeAvoidanceViewController.cs" />
+    <Compile Include="ViewControllers\ChangeAvoidance\ChangeAvoidanceView.designer.cs">
+      <DependentUpon>ChangeAvoidanceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ChangeBuddy\ChangeBuddyView.cs" />
+    <Compile Include="ViewControllers\ChangeBuddy\ChangeBuddyViewController.cs" />
+    <Compile Include="ViewControllers\ChangeBuddy\ChangeBuddyView.designer.cs">
+      <DependentUpon>ChangeBuddyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\FAPositionChoice\FAPositionChoiceWindow.cs" />
+    <Compile Include="WindowControllers\FAPositionChoice\FAPositionChoiceWindowController.cs" />
+    <Compile Include="WindowControllers\FAPositionChoice\FAPositionChoiceWindow.designer.cs">
+      <DependentUpon>FAPositionChoiceWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\BidEditorPrep\BidEditorPrepWindow.cs" />
+    <Compile Include="WindowControllers\BidEditorPrep\BidEditorPrepWindowController.cs" />
+    <Compile Include="WindowControllers\BidEditorPrep\BidEditorPrepWindow.designer.cs">
+      <DependentUpon>BidEditorPrepWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\BidEditorFA\BidEditorFAWindow.cs" />
+    <Compile Include="WindowControllers\BidEditorFA\BidEditorFAWindowController.cs" />
+    <Compile Include="WindowControllers\BidEditorFA\BidEditorFAWindow.designer.cs">
+      <DependentUpon>BidEditorFAWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\BidEditorPilot\BidEditorPilotWindow.cs" />
+    <Compile Include="WindowControllers\BidEditorPilot\BidEditorPilotWindowController.cs" />
+    <Compile Include="WindowControllers\BidEditorPilot\BidEditorPilotWindow.designer.cs">
+      <DependentUpon>BidEditorPilotWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\ViewFile\ViewFileWindow.cs" />
+    <Compile Include="WindowControllers\ViewFile\ViewFileWindowController.cs" />
+    <Compile Include="WindowControllers\ViewFile\ViewFileWindow.designer.cs">
+      <DependentUpon>ViewFileWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\GetAwards\GetAwardsWindow.cs" />
+    <Compile Include="WindowControllers\GetAwards\GetAwardsWindowController.cs" />
+    <Compile Include="WindowControllers\GetAwards\GetAwardsWindow.designer.cs">
+      <DependentUpon>GetAwardsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\LoginView\LoginView.cs" />
+    <Compile Include="ViewControllers\LoginView\LoginViewController.cs" />
+    <Compile Include="ViewControllers\LoginView\LoginView.designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\OverlayView\OverlayView.cs" />
+    <Compile Include="ViewControllers\OverlayView\OverlayViewController.cs" />
+    <Compile Include="ViewControllers\OverlayView\OverlayView.designer.cs">
+      <DependentUpon>OverlayView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\CSW\CSWWindow.cs" />
+    <Compile Include="WindowControllers\CSW\CSWWindowController.cs" />
+    <Compile Include="WindowControllers\CSW\CSWWindow.designer.cs">
+      <DependentUpon>CSWWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ConstraintsView\ConstraintsView.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\ConstraintsViewController.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\ConstraintsView.designer.cs">
+      <DependentUpon>ConstraintsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\FileWindow\FileWindow.cs" />
+    <Compile Include="WindowControllers\FileWindow\FileWindowController.cs" />
+    <Compile Include="WindowControllers\FileWindow\FileWindow.designer.cs">
+      <DependentUpon>FileWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\ConstraintsApplied.cs" />
+    <Compile Include="ViewControllers\SortsView\SortsView.cs" />
+    <Compile Include="ViewControllers\SortsView\SortsViewController.cs" />
+    <Compile Include="ViewControllers\SortsView\SortsView.designer.cs">
+      <DependentUpon>SortsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ConstraintsView\ConstraintsCell.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\ConstraintsCell.designer.cs">
+      <DependentUpon>ConstraintsCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\WeightsApplied.cs" />
+    <Compile Include="ViewControllers\WeightsVew\WeightsView.cs" />
+    <Compile Include="ViewControllers\WeightsVew\WeightsViewController.cs" />
+    <Compile Include="ViewControllers\WeightsVew\WeightsView.designer.cs">
+      <DependentUpon>WeightsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\WeightsVew\WeightsCell.cs" />
+    <Compile Include="ViewControllers\WeightsVew\WeightsCell.designer.cs">
+      <DependentUpon>WeightsCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SortsView\SortCell.cs" />
+    <Compile Include="ViewControllers\SortsView\SortCell.designer.cs">
+      <DependentUpon>SortCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\Configuration\ConfigurationWindow.cs" />
+    <Compile Include="WindowControllers\Configuration\ConfigurationWindowController.cs" />
+    <Compile Include="WindowControllers\Configuration\ConfigurationWindow.designer.cs">
+      <DependentUpon>ConfigurationWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ModernView\ModernCell.cs" />
+    <Compile Include="ViewControllers\ModernView\ModernCell.designer.cs">
+      <DependentUpon>ModernCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\ColorClass.cs" />
+    <Compile Include="ViewControllers\EOMFAView\EOMFAView.cs" />
+    <Compile Include="ViewControllers\EOMFAView\EOMFAViewController.cs" />
+    <Compile Include="ViewControllers\EOMFAView\EOMFAView.designer.cs">
+      <DependentUpon>EOMFAView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\BidReceiptView\BidReceiptView.cs" />
+    <Compile Include="ViewControllers\BidReceiptView\BidReceiptViewController.cs" />
+    <Compile Include="ViewControllers\BidReceiptView\BidReceiptView.designer.cs">
+      <DependentUpon>BidReceiptView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\RegXHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewControllers\TestVacationView\TestVacationView.cs" />
+    <Compile Include="ViewControllers\TestVacationView\TestVacationViewController.cs" />
+    <Compile Include="ViewControllers\TestVacationView\TestVacationView.designer.cs">
+      <DependentUpon>TestVacationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\ContactUsWindow\ContactUsWindow.cs" />
+    <Compile Include="WindowControllers\ContactUsWindow\ContactUsWindowController.cs" />
+    <Compile Include="WindowControllers\ContactUsWindow\ContactUsWindow.designer.cs">
+      <DependentUpon>ContactUsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\HelpWindow\HelpWindow.cs" />
+    <Compile Include="WindowControllers\HelpWindow\HelpWindowController.cs" />
+    <Compile Include="WindowControllers\HelpWindow\HelpWindow.designer.cs">
+      <DependentUpon>HelpWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\QAEnvironmentView\QAEnvironmentView.cs" />
+    <Compile Include="ViewControllers\QAEnvironmentView\QAEnvironmentViewController.cs" />
+    <Compile Include="ViewControllers\QAEnvironmentView\QAEnvironmentView.designer.cs">
+      <DependentUpon>QAEnvironmentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\BidLineView\BidLineCell.cs" />
+    <Compile Include="ViewControllers\BidLineView\BidLineCell.designer.cs">
+      <DependentUpon>BidLineCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SynchConflictView\SynchConflictView.cs" />
+    <Compile Include="ViewControllers\SynchConflictView\SynchConflictViewController.cs" />
+    <Compile Include="ViewControllers\SynchConflictView\SynchConflictView.designer.cs">
+      <DependentUpon>SynchConflictView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ScrapView\ScrapView.cs" />
+    <Compile Include="ViewControllers\ScrapView\ScrapViewController.cs" />
+    <Compile Include="ViewControllers\ScrapView\ScrapView.designer.cs">
+      <DependentUpon>ScrapView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\Invisible\InvisibleWindow.cs" />
+    <Compile Include="WindowControllers\Invisible\InvisibleWindowController.cs" />
+    <Compile Include="WindowControllers\Invisible\InvisibleWindow.designer.cs">
+      <DependentUpon>InvisibleWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\Pairing Window\PairingWindow.cs" />
+    <Compile Include="WindowControllers\Pairing Window\PairingWindowController.cs" />
+    <Compile Include="WindowControllers\Pairing Window\PairingWindow.designer.cs">
+      <DependentUpon>PairingWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\QuickSetWindow\QuickSetWindow.cs" />
+    <Compile Include="WindowControllers\QuickSetWindow\QuickSetWindowController.cs" />
+    <Compile Include="WindowControllers\QuickSetWindow\QuickSetWindow.designer.cs">
+      <DependentUpon>QuickSetWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\QuickSetWindow\QuickSetCell.cs" />
+    <Compile Include="WindowControllers\QuickSetWindow\QuickSetCell.designer.cs">
+      <DependentUpon>QuickSetCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\QuickSetDetail\QuickSetDetailWindow.cs" />
+    <Compile Include="WindowControllers\QuickSetDetail\QuickSetDetailWindowController.cs" />
+    <Compile Include="WindowControllers\QuickSetDetail\QuickSetDetailWindow.designer.cs">
+      <DependentUpon>QuickSetDetailWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\QuickSetDetail\QuickSetDetailCell.cs" />
+    <Compile Include="WindowControllers\QuickSetDetail\QuickSetDetailCell.designer.cs">
+      <DependentUpon>QuickSetDetailCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MILConfigView\MILConfigView.cs" />
+    <Compile Include="ViewControllers\MILConfigView\MILConfigViewController.cs" />
+    <Compile Include="ViewControllers\MILConfigView\MILConfigView.designer.cs">
+      <DependentUpon>MILConfigView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\MILConfigView\MILConfigCell.cs" />
+    <Compile Include="ViewControllers\MILConfigView\MILConfigCell.designer.cs">
+      <DependentUpon>MILConfigCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\NetworkData.cs" />
+    <Compile Include="Vacation\VacationCorrectionBL.cs" />
+    <Compile Include="WindowControllers\BidAutomator\CSWWindow.designer.cs">
+      <DependentUpon>BAWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\BidAutomator\BAWindow.cs" />
+    <Compile Include="WindowControllers\BidAutomator\BAWindowController.cs" />
+    <Compile Include="FilterCell.cs" />
+    <Compile Include="FilterCell.designer.cs">
+      <DependentUpon>FilterCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\FilterView\BAFilterView.cs" />
+    <Compile Include="ViewControllers\FilterView\BAFilterView.designer.cs">
+      <DependentUpon>BAFilterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\FilterView\BAFilterViewController.cs" />
+    <Compile Include="ViewControllers\FilterView\BAFilterViewController.designer.cs">
+      <DependentUpon>BAFilterViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\FilterView\FiltersCell.cs" />
+    <Compile Include="ViewControllers\FilterView\FiltersCell.designer.cs">
+      <DependentUpon>FiltersCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ConstraintsView\ArrivalAndDepartView.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\ArrivalAndDepartView.designer.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\ArrivalAndDepartViewController.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\ArrivalAndDepartViewController.designer.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\ArrivalDepartCell.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\ArrivalDepartCell.designer.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\CommutableView.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\CommutableView.designer.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\CommutableViewController.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\CommutableViewController.designer.cs" />
+    <Compile Include="WBidDataDwonloadAuthService.cs" />
+    <Compile Include="ViewControllers\FilterView\DaysOfMonth.cs" />
+    <Compile Include="ViewControllers\FilterView\DaysOfMonthController.cs" />
+    <Compile Include="ViewControllers\FilterView\DaysOfMonth.designer.cs">
+      <DependentUpon>DaysOfMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\FilterView\DaysOfMonthController.designer.cs">
+      <DependentUpon>DaysOfMonthController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\BASortView\BASortCell.cs" />
+    <Compile Include="ViewControllers\BASortView\BASortsView.cs" />
+    <Compile Include="ViewControllers\BASortView\BASortsView.designer.cs" />
+    <Compile Include="ViewControllers\BASortView\BASortsViewController.cs" />
+    <Compile Include="ViewControllers\BASortView\SortCell.designer.cs" />
+    <Compile Include="ViewControllers\FilterView\CalendarButton.cs" />
+    <Compile Include="ViewControllers\FilterView\OvernightCitiesDetails.cs" />
+    <Compile Include="ViewControllers\FilterView\OvernightCitiesDetailsController.cs" />
+    <Compile Include="ViewControllers\FilterView\OvernightCitiesDetails.designer.cs">
+      <DependentUpon>OvernightCitiesDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\FilterView\OvernightCitiesDetailsController.designer.cs">
+      <DependentUpon>OvernightCitiesDetailsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\BA Group Details\BAgroupWindow.cs" />
+    <Compile Include="WindowControllers\BA Group Details\BAgroupWindow.designer.cs">
+      <DependentUpon>BAgroupWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\BA Group Details\BAgroupWindowController.cs" />
+    <Compile Include="WindowControllers\BA Group Details\BaGroupCell.cs" />
+    <Compile Include="WindowControllers\BA Group Details\BaGroupCell.designer.cs">
+      <DependentUpon>BaGroupCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ScrapView\ContractorEmpScrap.cs" />
+    <Compile Include="ViewControllers\ScrapView\ContractorEmpScrapController.cs" />
+    <Compile Include="ViewControllers\ScrapView\ContractorEmpScrap.designer.cs">
+      <DependentUpon>ContractorEmpScrap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ScrapView\ContractorEmpScrapController.designer.cs">
+      <DependentUpon>ContractorEmpScrapController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\View CAP\ShowCAP.cs" />
+    <Compile Include="WindowControllers\View CAP\ShowCAP.designer.cs">
+      <DependentUpon>ShowCAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\View CAP\ShowCAPController.cs" />
+    <Compile Include="WindowControllers\View CAP\ShowCAPController.designer.cs">
+      <DependentUpon>ShowCAPController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ConstraintsView\CommutabilityView.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\CommutabilityView.designer.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\CommutabilityViewController.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\CommutabilityViewController.designer.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\CommutabilityArriveView.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\CommutabilityArriveViewController.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\CommutabilityArriveView.designer.cs">
+      <DependentUpon>CommutabilityArriveView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ConstraintsView\CommutabilityArriveViewController.designer.cs">
+      <DependentUpon>CommutabilityArriveViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ConstraintsView\CommutabilityArriveCell.cs" />
+    <Compile Include="ViewControllers\ConstraintsView\CommutabilityArriveCell.designer.cs">
+      <DependentUpon>CommutabilityArriveCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\QueryWindow\BidChoiceWindow.cs" />
+    <Compile Include="WindowControllers\QueryWindow\BidChoiceWindow.designer.cs">
+      <DependentUpon>BidChoiceWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\QueryWindow\BidChoiceWindowController.cs" />
+    <Compile Include="WindowControllers\QueryWindow\BidChoiceWindowController.designer.cs">
+      <DependentUpon>BidChoiceWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Ratio\RatioViewController.cs" />
+    <Compile Include="ViewControllers\Ratio\RatioViewControllerController.cs" />
+    <Compile Include="ViewControllers\Ratio\RatioViewController.designer.cs">
+      <DependentUpon>RatioViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\Ratio\RatioViewControllerController.designer.cs">
+      <DependentUpon>RatioViewControllerController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\SecretDataDownload.cs" />
+    <Compile Include="WindowControllers\SecretDataDownload.designer.cs">
+      <DependentUpon>SecretDataDownload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\SecretDataDownloadController.cs" />
+    <Compile Include="WindowControllers\SecretDataDownloadController.designer.cs">
+      <DependentUpon>SecretDataDownloadController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\SecretDataCell.cs" />
+    <Compile Include="WindowControllers\SecretDataCell.designer.cs">
+      <DependentUpon>SecretDataCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SortsView\CommutableLineManual.cs" />
+    <Compile Include="ViewControllers\SortsView\CommutableLineManualController.cs" />
+    <Compile Include="ViewControllers\SortsView\CommutableLineManual.designer.cs">
+      <DependentUpon>CommutableLineManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SortsView\CommutableLineManualController.designer.cs">
+      <DependentUpon>CommutableLineManualController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\SynchSelectionView\SynchSelection.cs" />
+    <Compile Include="WindowControllers\SynchSelectionView\SynchSelection.designer.cs">
+      <DependentUpon>SynchSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\SynchSelectionView\SynchSelectionController.cs" />
+    <Compile Include="WindowControllers\SynchSelectionView\SynchSelectionController.designer.cs">
+      <DependentUpon>SynchSelectionController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\SynchView\SynchViewWindow.cs" />
+    <Compile Include="WindowControllers\SynchView\SynchViewWindow.designer.cs">
+      <DependentUpon>SynchViewWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\SynchView\SynchViewWindowController.cs" />
+    <Compile Include="WindowControllers\SynchView\SynchViewWindowController.designer.cs">
+      <DependentUpon>SynchViewWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\UserLogin\LoginWindowController.cs" />
+    <Compile Include="WindowControllers\UserLogin\LoginWindowController.designer.cs">
+      <DependentUpon>LoginWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\UserUpdateInfo\UserUpdateInfo.cs" />
+    <Compile Include="WindowControllers\UserUpdateInfo\UserUpdateInfo.designer.cs">
+      <DependentUpon>UserUpdateInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\UserUpdateInfo\UserUpdateInfoController.cs" />
+    <Compile Include="WindowControllers\UserAccoutDifference\UserAccountDifference.cs" />
+    <Compile Include="WindowControllers\UserAccoutDifference\UserAccountDifference.designer.cs">
+      <DependentUpon>UserAccountDifference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\UserAccoutDifference\UserAccountDifferenceController.cs" />
+    <Compile Include="WindowControllers\UserAccoutDifference\UserAccountDifferenceController.designer.cs">
+      <DependentUpon>UserAccountDifferenceController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\UserAccoutDifference\AccountCell.cs" />
+    <Compile Include="WindowControllers\UserAccoutDifference\AccountCell.designer.cs">
+      <DependentUpon>AccountCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\MonthToMonthAlert\MonthToMonthAlertView.cs" />
+    <Compile Include="WindowControllers\MonthToMonthAlert\MonthToMonthAlertView.designer.cs">
+      <DependentUpon>MonthToMonthAlertView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\MonthToMonthAlert\MonthToMonthAlertViewController.cs" />
+    <Compile Include="WindowControllers\MonthToMonthAlert\MonthToMonthAlertViewController.designer.cs">
+      <DependentUpon>MonthToMonthAlertViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\CustomAlert\CustomAlertBox.cs" />
+    <Compile Include="WindowControllers\CustomAlert\CustomAlertBox.designer.cs">
+      <DependentUpon>CustomAlertBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\CustomAlert\CustomAlertBoxController.cs" />
+    <Compile Include="WindowControllers\CustomAlert\CustomAlertBoxController.designer.cs">
+      <DependentUpon>CustomAlertBoxController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\CustomAlertView\CustomAlertView.cs" />
+    <Compile Include="ViewControllers\CustomAlertView\CustomAlertViewController.cs" />
+    <Compile Include="ViewControllers\CustomAlertView\CustomAlertView.designer.cs">
+      <DependentUpon>CustomAlertView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\CustomAlertView\CustomAlertViewController.designer.cs">
+      <DependentUpon>CustomAlertViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\InitialLogin\InitialLoginWindow.cs" />
+    <Compile Include="WindowControllers\InitialLogin\InitialLoginWindowController.cs" />
+    <Compile Include="WindowControllers\InitialLogin\InitialLoginWindowController.designer.cs" />
+    <Compile Include="WindowControllers\UserLogin\LoginWindow.cs" />
+    <Compile Include="WindowControllers\UserLogin\LoginWindow.designer.cs">
+      <DependentUpon>LoginWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\LoginNew\NewLoginWindow.cs" />
+    <Compile Include="WindowControllers\LoginNew\NewLoginWindow.designer.cs">
+      <DependentUpon>NewLoginWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\LoginNew\NewLoginWindowController.cs" />
+    <Compile Include="WindowControllers\LoginNew\NewLoginWindowController.designer.cs">
+      <DependentUpon>NewLoginWindowController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\VacationDifference\VacationDifferenceController.cs" />
+    <Compile Include="WindowControllers\VacationDifference\VacationDifferenceController.designer.cs">
+      <DependentUpon>VacationDifferenceController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\VacationDifference\VacationDifferenceControllerController.cs" />
+    <Compile Include="WindowControllers\VacationDifference\VacationDifferenceControllerController.designer.cs">
+      <DependentUpon>VacationDifferenceControllerController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainMenu.xib" />
+    <InterfaceDefinition Include="ViewControllers\SummaryView\SummaryView.xib" />
+    <InterfaceDefinition Include="ViewControllers\BidLineView\BidLineView.xib" />
+    <InterfaceDefinition Include="ViewControllers\ModernView\ModernView.xib" />
+    <InterfaceDefinition Include="WindowControllers\MainWindow\MainWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\HomeWindow\HomeWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\NewBidWindow\NewBidWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\UserRegistration\UserRegistrationWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\DownloadBidWindow\DownloadBidWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\CalendarWindow\CalendarWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\TripWindow\TripWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\SubmitWindow\SubmitWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\QueryWindow\QueryWindow.xib" />
+    <InterfaceDefinition Include="ViewControllers\ChangeEmployee\ChangeEmployeeView.xib" />
+    <InterfaceDefinition Include="ViewControllers\ChangeAvoidance\ChangeAvoidanceView.xib" />
+    <InterfaceDefinition Include="ViewControllers\ChangeBuddy\ChangeBuddyView.xib" />
+    <InterfaceDefinition Include="WindowControllers\BidEditorPrep\BidEditorPrepWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\BidEditorFA\BidEditorFAWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\BidEditorPilot\BidEditorPilotWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\ViewFile\ViewFileWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\GetAwards\GetAwardsWindow.xib" />
+    <InterfaceDefinition Include="ViewControllers\LoginView\LoginView.xib" />
+    <InterfaceDefinition Include="ViewControllers\OverlayView\OverlayView.xib" />
+    <InterfaceDefinition Include="WindowControllers\CSW\CSWWindow.xib" />
+    <InterfaceDefinition Include="ViewControllers\ConstraintsView\ConstraintsView.xib" />
+    <InterfaceDefinition Include="WindowControllers\FileWindow\FileWindow.xib" />
+    <InterfaceDefinition Include="ViewControllers\SortsView\SortsView.xib">
+      <DependentUpon>SortsView.cs</DependentUpon>
+    </InterfaceDefinition>
+    <InterfaceDefinition Include="ViewControllers\WeightsVew\WeightsView.xib" />
+    <InterfaceDefinition Include="WindowControllers\Configuration\ConfigurationWindow.xib" />
+    <InterfaceDefinition Include="ViewControllers\EOMFAView\EOMFAView.xib" />
+    <InterfaceDefinition Include="ViewControllers\BidReceiptView\BidReceiptView.xib" />
+    <InterfaceDefinition Include="ViewControllers\TestVacationView\TestVacationView.xib" />
+    <InterfaceDefinition Include="WindowControllers\ContactUsWindow\ContactUsWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\HelpWindow\HelpWindow.xib" />
+    <InterfaceDefinition Include="ViewControllers\QAEnvironmentView\QAEnvironmentView.xib" />
+    <InterfaceDefinition Include="ViewControllers\SynchConflictView\SynchConflictView.xib" />
+    <InterfaceDefinition Include="ViewControllers\ScrapView\ScrapView.xib" />
+    <InterfaceDefinition Include="WindowControllers\Invisible\InvisibleWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\Pairing Window\PairingWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\QuickSetWindow\QuickSetWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\QuickSetDetail\QuickSetDetailWindow.xib" />
+    <InterfaceDefinition Include="ViewControllers\MILConfigView\MILConfigView.xib" />
+    <InterfaceDefinition Include="WindowControllers\BidAutomator\BAWindow.xib" />
+    <InterfaceDefinition Include="ViewControllers\ConstraintsView\ArrivalAndDepartView.xib" />
+    <InterfaceDefinition Include="ViewControllers\ConstraintsView\ArrivalDepartCell.xib" />
+    <InterfaceDefinition Include="ViewControllers\ConstraintsView\CommutableView.xib" />
+    <InterfaceDefinition Include="ViewControllers\FilterView\DaysOfMonth.xib" />
+    <InterfaceDefinition Include="ViewControllers\BASortView\BASortsView.xib" />
+    <InterfaceDefinition Include="ViewControllers\FilterView\OvernightCitiesDetails.xib" />
+    <InterfaceDefinition Include="WindowControllers\BA Group Details\BAgroupWindow.xib" />
+    <InterfaceDefinition Include="ViewControllers\ScrapView\ContractorEmpScrap.xib" />
+    <InterfaceDefinition Include="WindowControllers\View CAP\ShowCAP.xib" />
+    <InterfaceDefinition Include="ViewControllers\ConstraintsView\CommutabilityView.xib" />
+    <InterfaceDefinition Include="ViewControllers\ConstraintsView\CommutabilityArriveView.xib" />
+    <InterfaceDefinition Include="ViewControllers\ConstraintsView\CommutabilityArriveCell.xib" />
+    <InterfaceDefinition Include="WindowControllers\QueryWindow\BidChoiceWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\FAPositionChoice\FAPositionChoiceWindow.xib" />
+    <InterfaceDefinition Include="ViewControllers\FilterView\BAFilterView.xib" />
+    <InterfaceDefinition Include="ViewControllers\Ratio\RatioViewController.xib" />
+    <InterfaceDefinition Include="WindowControllers\SecretDataDownload.xib" />
+    <InterfaceDefinition Include="Resources\WindowControllers\SecretDownloadCell.xib" />
+    <InterfaceDefinition Include="WindowControllers\SecretDataCell.xib" />
+    <InterfaceDefinition Include="ViewControllers\SortsView\CommutableLineManual.xib" />
+    <InterfaceDefinition Include="WindowControllers\SynchSelectionView\SynchSelection.xib" />
+    <InterfaceDefinition Include="WindowControllers\SynchView\SynchViewWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\UserLogin\LoginWindowController.xib" />
+    <InterfaceDefinition Include="WindowControllers\UserUpdateInfo\UserUpdateInfo.xib" />
+    <InterfaceDefinition Include="WindowControllers\UserAccoutDifference\UserAccountDifference.xib" />
+    <InterfaceDefinition Include="WindowControllers\MonthToMonthAlert\MonthToMonthAlertView.xib" />
+    <InterfaceDefinition Include="WindowControllers\CustomAlert\CustomAlertBox.xib" />
+    <InterfaceDefinition Include="ViewControllers\CustomAlertView\CustomAlertView.xib" />
+    <InterfaceDefinition Include="WindowControllers\InitialLogin\InitialLoginWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\UserLogin\LoginWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\LoginNew\NewLoginWindow.xib" />
+    <InterfaceDefinition Include="WindowControllers\VacationDifference\VacationDifferenceController.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="ThrirdParty\HtmlAgilityPackiOs.dll" />
+    <None Include="ThrirdParty\System.Runtime.Serialization.dll" />
+    <None Include="ThrirdParty\protobuf-net.dll" />
+    <None Include="ThrirdParty\itextsharp.dll" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info %28copy%291.plist" />
+    <None Include="Info %28another copy%291.plist" />
+    <None Include="Info %28copy%29.plist" />
+    <None Include="Info %28another copy%29.plist" />
+    <None Include="Info %283rd copy%29.plist" />
+    <None Include="Info %284th copy%29.plist" />
+    <None Include="Info %285th copy%29.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ColumnDefinitions.xml" />
+    <BundleResource Include="Resources\lockIcon.png" />
+    <BundleResource Include="Resources\lockIconGreen.png" />
+    <BundleResource Include="Resources\lockIconRed.png" />
+    <BundleResource Include="Resources\constraintIcon.png" />
+    <BundleResource Include="Resources\overlapIcon.png" />
+    <BundleResource Include="Resources\MacIcon.icns" />
+    <BundleResource Include="Resources\removeLockGreen.png" />
+    <BundleResource Include="Resources\removeLockRed.png" />
+    <BundleResource Include="Resources\homeMac.png" />
+    <BundleResource Include="Resources\saveMac.png" />
+    <BundleResource Include="Resources\split1.png" />
+    <BundleResource Include="Resources\split1d.png" />
+    <BundleResource Include="Resources\split2.png" />
+    <BundleResource Include="Resources\split2d.png" />
+    <BundleResource Include="Resources\cpBgMen.png" />
+    <BundleResource Include="Resources\cpBgWomen.png" />
+    <BundleResource Include="Resources\faBgMen.png" />
+    <BundleResource Include="Resources\faBgWomen.png" />
+    <BundleResource Include="Resources\foBgMen.png" />
+    <BundleResource Include="Resources\foBgWomen.png" />
+    <BundleResource Include="Resources\closeIcon.png" />
+    <BundleResource Include="Resources\Help Files\Column Headings.pdf" />
+    <BundleResource Include="Resources\Help Files\Constraints.pdf" />
+    <BundleResource Include="Resources\Help Files\EOM - End of Month.pdf" />
+    <BundleResource Include="Resources\Help Files\OVR – MTM Overlap.pdf" />
+    <BundleResource Include="Resources\Help Files\Sorts.pdf" />
+    <BundleResource Include="Resources\Help Files\VAC – Vacation Flt Att.pdf" />
+    <BundleResource Include="Resources\Help Files\VAC - Vacation Pilots.pdf" />
+    <BundleResource Include="Resources\Help Files\Weights.pdf" />
+    <BundleResource Include="Resources\synchIcon3.png" />
+    <BundleResource Include="Resources\Help Files\Getting Started.pdf" />
+    <BundleResource Include="Resources\redo_mac.png" />
+    <BundleResource Include="Resources\undo_mac.png" />
+    <BundleResource Include="Resources\Credits.rtf" />
+    <BundleResource Include="Resources\bottomLockRed.png" />
+    <BundleResource Include="Resources\topLockGreen.png" />
+    <BundleResource Include="Resources\split1m.png" />
+    <BundleResource Include="Resources\split2m.png" />
+    <BundleResource Include="Resources\Help Files\Smart Sync.pdf" />
+    <BundleResource Include="Resources\Help Files\Quicksets.pdf" />
+    <BundleResource Include="Resources\Help Files\MIL Button.pdf" />
+    <BundleResource Include="Resources\blueBorder.png" />
+    <BundleResource Include="Resources\blueBorderSelected.png" />
+    <BundleResource Include="Resources\homeMacDark.png" />
+    <BundleResource Include="Resources\saveMacDark.png" />
+    <BundleResource Include="Resources\synchIconDark.png" />
+    <BundleResource Include="Resources\btnLightGreenBg.png" />
+    <BundleResource Include="Resources\btnOrangeBg.png" />
+    <BundleResource Include="Resources\btnRedBg.png" />
+    <BundleResource Include="Resources\WBid.WBidMac.MacRelease.entitlements" />
+    <BundleResource Include="Resources\WBid.WBidMac.MacDebug.entitlements" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\WBid.WBidiPad.Core\WBid.WBidiPad.Core.csproj">
+      <Project>{AA94679D-7332-4128-8F7D-043D2E35AA78}</Project>
+      <Name>WBid.WBidiPad.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WBid.WBidiPad.Model\WBid.WBidiPad.Model.csproj">
+      <Project>{C90565E2-1E06-4036-9B1E-A6C98D41FEE8}</Project>
+      <Name>WBid.WBidiPad.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WBid.WBidiPad.PortableLibrary\WBid.WBidiPad.PortableLibrary.csproj">
+      <Project>{46B1E192-3E6E-4DBE-92C4-61D7A36D9B02}</Project>
+      <Name>WBid.WBidiPad.PortableLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WBid.WBidiPad.SharedLibrary\WBid.WBidiPad.SharedLibrary.csproj">
+      <Project>{99F8C71D-3066-46F9-9C4C-DF6309510870}</Project>
+      <Name>WBid.WBidiPad.SharedLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

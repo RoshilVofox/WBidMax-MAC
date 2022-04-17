@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.wbidmax.wbidmac</string>
+	<key>CFBundleName</key>
+	<string>WBidMax</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.9</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>CFBundleDisplayName</key>
+	<string>WBidMax</string>
+	<key>CFBundleIconFile</key>
+	<string>MacIcon</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Please give access to Export pairing to Outlook</string>
+	<key>CFBundleShortVersionString</key>
+	<string>6.52.1.7</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>NSRequiresAquaSystemAppearance</key>
+	<false/>
+	<key>com.apple.security.automation.apple-events</key>
+	<true/>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+</dict>
+</plist>
