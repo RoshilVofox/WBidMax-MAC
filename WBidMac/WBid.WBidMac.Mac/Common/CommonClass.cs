@@ -842,6 +842,163 @@ namespace WBid.WBidMac.Mac
 
 		}
 
+		//public static bool SaveFormattedBidReceiptForPilot(string submitresult)
+		//{
+		//	try
+		//	{
+		//		string lineString = string.Empty;
+		//		string employeename = submitresult.Substring(0, submitresult.IndexOf("\n"));
+		//		string fileName = employeename + "Rct.pdf";
+		//		string footer = string.Empty;
+		//		var lists = submitresult.Split('*').ToList();
+		//		lists.RemoveAt(0);
+		//		foreach (var item in lists)
+		//		{
+		//			footer += item;
+		//		}
+
+		//		StringBuilder resultHeadingString = new StringBuilder();
+
+		//		List<StringBuilder> content = new List<StringBuilder>();
+
+		//		List<PrintBidReceipt> lstPrintBidReceipt = new List<PrintBidReceipt>();
+		//		var submit = submitresult.Split('\n').ToList();
+		//		submit.RemoveAt(0);
+		//		int count = 1;
+		//		var lines = GlobalSettings.Lines;
+		//		foreach (string item in submit)
+		//		{
+		//			if (item.Contains('*'))
+		//				break;
+		//			lstPrintBidReceipt.Add(new PrintBidReceipt() { LineOrder = count++, LineNum = item });
+
+		//		}
+		//		resultHeadingString.Append(lineString + Environment.NewLine + Environment.NewLine);
+
+		//		List<PDFPage> lstPDfPages = new List<PDFPage>();
+
+		//		PDFPage objPDFPage = new PDFPage();
+		//		objPDFPage.Page = new List<SingleLine>();
+		//		SingleLine objSingleLine = new SingleLine();
+		//		objSingleLine.lstContent = new List<Content>();
+
+
+
+
+		//		int startvalu = 0;
+		//		int index = 0;
+		//		int itemPercolumn = 53;
+
+
+		//		StringBuilder singlePageContent = new StringBuilder();
+
+		//		objSingleLine.lstContent.Add(new Content { Data = "WBidMax Formatted Bid Receipt " });
+		//		objPDFPage.Page.Add(objSingleLine);
+
+		//		objSingleLine = new SingleLine();
+		//		objSingleLine.lstContent = new List<Content>();
+		//		objSingleLine.lstContent.Add(new Content { Data = "Employee Number : " + employeename });
+		//		objPDFPage.Page.Add(objSingleLine);
+
+		//		objSingleLine = new SingleLine();
+		//		objSingleLine.lstContent = new List<Content>();
+		//		objSingleLine.lstContent.Add(new Content { Data = "Bid Receipt File :" + WBidHelper.GetAppDataPath() + "\\" + fileName });
+		//		objPDFPage.Page.Add(objSingleLine);
+
+		//		objSingleLine = new SingleLine();
+		//		objSingleLine.lstContent = new List<Content>();
+		//		objSingleLine.lstContent.Add(new Content { Data = "Receipt File Dated :" + DateTime.Now.ToLongDateString() + "(Local)" });
+		//		objPDFPage.Page.Add(objSingleLine);
+
+		//		objSingleLine = new SingleLine();
+		//		objSingleLine.lstContent = new List<Content>();
+		//		objSingleLine.lstContent.Add(new Content { Data = footer });
+		//		objPDFPage.Page.Add(objSingleLine);
+
+		//		Content objContent = new Content();
+
+		//		objContent = new Content();
+
+		//		string lineStr = string.Empty;
+		//		int bidReceiptIndex;
+		//		while (index + startvalu < lstPrintBidReceipt.Count)
+		//		{
+		//			objSingleLine = new SingleLine();
+		//			objSingleLine.lstContent = new List<Content>();
+		//			for (int cnt = 0; cnt < 7; cnt++)
+		//			{
+		//				bidReceiptIndex = startvalu + index + (cnt * itemPercolumn);
+
+		//				if (bidReceiptIndex < lstPrintBidReceipt.Count)
+		//				{
+		//					lineStr = lstPrintBidReceipt[bidReceiptIndex].LineOrder.ToString().PadLeft(3, ' ') + ". " + lstPrintBidReceipt[bidReceiptIndex].LineNum.PadRight(3, ' ');
+
+
+		//					//singlePageContent.Append(lineStr.PadRight(15, ' '));
+		//					objContent = new Content();
+		//					objContent.Data = lineStr.PadRight(15, ' ');
+		//					int lineNUm = Convert.ToInt32(lstPrintBidReceipt[bidReceiptIndex].LineNum);
+		//					var liendata = lines.FirstOrDefault(x => x.LineNum == lineNUm);
+
+		//					if (liendata != null)
+		//					{
+		//						objContent.Blank = liendata.BlankLine;
+		//						objContent.Reserve = liendata.ReserveLine;
+
+		//					}
+
+		//					objSingleLine.lstContent.Add(objContent);
+		//				}
+		//				else
+		//				{
+		//					break;
+		//				}
+		//			}
+		//			objPDFPage.Page.Add(objSingleLine);
+
+
+		//			index++;
+		//			if (index == itemPercolumn)
+		//			{
+		//				index = 0;
+		//				startvalu = startvalu + index + (7 * itemPercolumn);
+		//				itemPercolumn = 62;
+
+		//				lstPDfPages.Add(objPDFPage);
+
+		//				objPDFPage = new PDFPage();
+		//				objPDFPage.Page = new List<SingleLine>();
+
+		//			}
+
+
+		//		}
+
+		//		if (singlePageContent.ToString().Trim() != string.Empty)
+		//		{
+		//			lstPDfPages.Add(objPDFPage);
+		//			// content.Add(singlePageContent);
+
+		//		}
+				
+		//		PDfParams pdfParams = new PDfParams
+		//		{
+		//			Author = "WBidMax",
+		//			Creator = "WBidmax",
+		//			FileName = fileName,
+		//			Subject = "Bid Receipt",
+		//			Title = "Bid Receipt"
+		//		};
+
+		//		CreatePDF(pdfParams, lstPDfPages);
+		//	}
+		//	catch (Exception ex)
+		//	{
+		//		return false;
+		//	}
+		//	return true;
+		//}
+
 		public static void CreatePDF(PDfParams PDfParams,List<StringBuilder> ls)
 		{
 			using (PdfWriter pdfWriter = new PdfWriter(PDfParams.FileName))
@@ -893,6 +1050,19 @@ namespace WBid.WBidMac.Mac
 			//document.Close();
 
 		}
+
+		public void CreatePDF(PDfParams PDfParams, List<PDFPage> lstData)
+		{
+			try
+			{
+				
+			}
+			catch (Exception ex)
+			{
+
+				throw ex;
+			}
+		}
 		#endregion
 
 
@@ -915,6 +1085,22 @@ namespace WBid.WBidMac.Mac
 
 
 
+	}
+	public class PDFPage
+	{
+		public List<SingleLine> Page { get; set; }
+	}
+	public class SingleLine
+	{
+		public List<Content> lstContent { get; set; }
+
+	}
+
+	public class Content
+	{
+		public string Data { get; set; }
+		public bool Blank { get; set; }
+		public bool Reserve { get; set; }
 	}
 }
 

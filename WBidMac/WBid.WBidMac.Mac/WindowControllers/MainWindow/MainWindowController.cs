@@ -309,6 +309,7 @@ namespace WBid.WBidMac.Mac
                     Synch ();
                 });
                 TextColor(btnVacation, NSColor.Black);
+                btnVacDiff.Hidden = !GlobalSettings.IsNeedToEnableVacDiffButton;
 
             } catch (Exception ex) {
                 CommonClass.AppDelegate.ErrorLog (ex);
@@ -2562,8 +2563,15 @@ namespace WBid.WBidMac.Mac
         void btnVacDiffClicked(object sender, EventArgs e)
         {
             var showvacDiff = new VacationDifferenceControllerController();
-			CommonClass.MainController.Window.AddChildWindow (showvacDiff.Window, NSWindowOrderingMode.Above);
-			NSApplication.SharedApplication.RunModalForWindow (showvacDiff.Window);
+            showvacDiff.Window.MakeKeyAndOrderFront(this);
+            showvacDiff.GetVacationDifffrenceData();
+            //showvacDiff.Window.Level = NSWindowLevel.Floating;
+            //showvacDiff.ShowWindow(this);
+            if(!showvacDiff.IsNeedToClose)
+            { 
+            CommonClass.MainController.Window.AddChildWindow(showvacDiff.Window, NSWindowOrderingMode.Above);
+                NSApplication.SharedApplication.RunModalForWindow(showvacDiff.Window);
+            }
         }
         void btnMILClicked (object sender, EventArgs e)
         {

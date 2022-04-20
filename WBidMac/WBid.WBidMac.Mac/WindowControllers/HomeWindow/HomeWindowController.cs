@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using AppKit;
 using Foundation;
 using WBid.WBidiPad.Core;
+using WBid.WBidiPad.Core.Enum;
 using WBid.WBidiPad.iOS.Utility;
 using WBid.WBidiPad.Model;
 using WBid.WBidiPad.PortableLibrary;
@@ -78,8 +79,9 @@ namespace WBid.WBidMac.Mac
 				Console.WriteLine("Position" + this.Window.Frame.X);
 				base.AwakeFromNib ();
 
+				bool IsInternetAvailable = Reachability.CheckVPSAvailable();
 
-                var interfaceStyle = NSUserDefaults.StandardUserDefaults.StringForKey("AppleInterfaceStyle");
+				var interfaceStyle = NSUserDefaults.StandardUserDefaults.StringForKey("AppleInterfaceStyle");
 
                 if (interfaceStyle == "Dark") {
 
@@ -215,7 +217,7 @@ namespace WBid.WBidMac.Mac
 //				}
 				if (!System.IO.File.Exists (WBidHelper.HistoricalFilesInfoPath))
 				{
-                    if (Reachability.CheckVPSAvailable()) 
+                    if (IsInternetAvailable) 
 						{
 						BasicHttpBinding binding = ServiceUtils.CreateBasicHttp ();
 				client = new WBidDataDwonloadAuthServiceClient (binding, ServiceUtils.EndPoint);
@@ -223,6 +225,10 @@ namespace WBid.WBidMac.Mac
 				client.GetAvailableHistoricalListCompleted+= Client_GetAvailableHistoricalListCompleted;
 					client.GetAvailableHistoricalListAsync();
 						}
+				}
+				if (IsInternetAvailable)
+				{
+					GetApplicationLoadDataFromServer();
 				}
 			} catch (Exception ex) {
 				CommonClass.AppDelegate.ErrorLog (ex);
@@ -249,9 +255,21 @@ namespace WBid.WBidMac.Mac
 //			//scrap.View.Hidden = true;
 //			this.Window.ContentView.AddSubview (scrap.View);
 		}
+		/// <summary>
+        /// get button enable/disable or get settings from the database
+        /// </summary>
+		private void GetApplicationLoadDataFromServer()
+		{
 
-		//private void client_GetEmployeeDetailsAsyncCompleted(object sender, GetEmployeeDetailsCompletedEventArgs e)
-		//{
+			ApplicationData info = new ApplicationData();
+			info.FromApp = (int)FromApp.WbidmaxMACApp;
+			var jsonData = ServiceUtils.JsonSerializer(info);
+			StreamReader dr = ServiceUtils.GetRestData("GetApplicationLoadDatas", jsonData);
+			ApplicationLoadData appLoadData = WBidCollection.ConvertJSonStringToObject<ApplicationLoadData>(dr.ReadToEnd());
+			GlobalSettings.IsNeedToEnableVacDiffButton = appLoadData.IsNeedtoEnableVacationDifference;
+
+		}
+
 		private void checkUserDetails(WBidDataDownloadAuthorizationService.Model.UserInformation userData)
 		{
 			try

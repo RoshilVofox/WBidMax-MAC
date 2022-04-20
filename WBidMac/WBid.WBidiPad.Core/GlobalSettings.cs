@@ -346,5 +346,7 @@ namespace WBid.WBidiPad.Core
         public static bool IsFVVacation{ get; set; }
 
         public static bool isVFXServer { get; set; }
+
+        public static bool IsNeedToEnableVacDiffButton { get; set; }
     }
 }
