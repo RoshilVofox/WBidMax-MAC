@@ -30,8 +30,8 @@
                             <rect key="frame" x="1" y="1" width="748" height="536"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="3qK-Kg-XEk" id="GeE-3a-rT5">
-                                    <rect key="frame" x="0.0" y="0.0" width="748" height="508"/>
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" id="GeE-3a-rT5">
+                                    <rect key="frame" x="0.0" y="0.0" width="748" height="536"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -133,7 +133,7 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         </tableColumn>
-                                        <tableColumn identifier="newvacpaybo" width="44" minWidth="10" maxWidth="3.4028234663852886e+38" id="XfB-n0-fLv">
+                                        <tableColumn identifier="newvacpaybo" width="73" minWidth="10" maxWidth="3.4028234663852886e+38" id="XfB-n0-fLv">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Column">
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -157,10 +157,6 @@
                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <tableHeaderView key="headerView" wantsLayer="YES" id="3qK-Kg-XEk">
-                            <rect key="frame" x="0.0" y="0.0" width="748" height="28"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </tableHeaderView>
                     </scrollView>
                     <colorWell bordered="NO" enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BY6-wq-bZM">
                         <rect key="frame" x="0.0" y="563" width="750" height="37"/>

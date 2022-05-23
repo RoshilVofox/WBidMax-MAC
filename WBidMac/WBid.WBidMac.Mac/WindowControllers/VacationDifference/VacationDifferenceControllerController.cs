@@ -121,6 +121,7 @@ namespace WBid.WBidMac.Mac.WindowControllers.VacationDifference
             }
             else
             {
+                IsNeedToClose = true;
                 string alertmessage = GlobalSettings.VPSDownAlert;
                 if (Reachability.IsSouthWestWifiOr2wire())
                 {
