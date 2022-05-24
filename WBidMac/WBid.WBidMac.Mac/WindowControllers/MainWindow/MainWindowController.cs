@@ -48,6 +48,7 @@ using WBid.WBidMac.Mac.WindowControllers.SynchSelectionView;
 using System.Threading.Tasks;
 using WBid.WBidiPad.SharedLibrary.SWA;
 using WBid.WBidMac.Mac.WindowControllers.VacationDifference;
+using WBid.WBidMac.Mac.WindowControllers.CommuteDifference;
 
 namespace WBid.WBidMac.Mac
 {
@@ -2562,16 +2563,42 @@ namespace WBid.WBidMac.Mac
         }
         void btnVacDiffClicked(object sender, EventArgs e)
         {
-            var showvacDiff = new VacationDifferenceControllerController();
-            showvacDiff.Window.MakeKeyAndOrderFront(this);
-            showvacDiff.GetVacationDifffrenceData();
-            //showvacDiff.Window.Level = NSWindowLevel.Floating;
-            //showvacDiff.ShowWindow(this);
-            if(!showvacDiff.IsNeedToClose)
-            { 
-            CommonClass.MainController.Window.AddChildWindow(showvacDiff.Window, NSWindowOrderingMode.Above);
-                NSApplication.SharedApplication.RunModalForWindow(showvacDiff.Window);
-            }
+
+            var alert = new NSAlert();
+            alert.AlertStyle = NSAlertStyle.Informational;
+            alert.MessageText = "WBidMax";
+            alert.InformativeText = "You may have changes in commute and vacation due to new flight data. What would you like to open?";
+            alert.AddButton("View Vacation Difference");
+            alert.AddButton("View Commute Difference");
+            alert.Buttons[0].Activated += (object sender1, EventArgs ex) => {
+                alert.Window.Close();
+                NSApplication.SharedApplication.StopModal();
+
+                var showvacDiff = new VacationDifferenceControllerController();
+                showvacDiff.Window.MakeKeyAndOrderFront(this);
+                showvacDiff.GetVacationDifffrenceData();
+                if (!showvacDiff.IsNeedToClose)
+                {
+                    CommonClass.MainController.Window.AddChildWindow(showvacDiff.Window, NSWindowOrderingMode.Above);
+                    NSApplication.SharedApplication.RunModalForWindow(showvacDiff.Window);
+                }
+            };
+            alert.Buttons[1].Activated += (object sender1, EventArgs ex) => {
+                alert.Window.Close();
+                NSApplication.SharedApplication.StopModal();
+
+                var showvacDiff = new CommutDifferenceControllerController();
+                showvacDiff.Window.MakeKeyAndOrderFront(this);
+                //showvacDiff.GetVacationDifffrenceData();
+                //if (!showvacDiff.IsNeedToClose)
+                //{
+                //    CommonClass.MainController.Window.AddChildWindow(showvacDiff.Window, NSWindowOrderingMode.Above);
+                //    NSApplication.SharedApplication.RunModalForWindow(showvacDiff.Window);
+                //}
+            };
+            alert.RunModal();
+
+            
         }
         void btnMILClicked (object sender, EventArgs e)
         {

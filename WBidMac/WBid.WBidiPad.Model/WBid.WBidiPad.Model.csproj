@@ -224,6 +224,7 @@
     <Compile Include="VacationValueDifferenceOutputDTO.cs" />
     <Compile Include="FlightDataChangeVacValues.cs" />
     <Compile Include="VacationInfo.cs" />
+    <Compile Include="CommuteFltChangeValues.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="protobuf-net">

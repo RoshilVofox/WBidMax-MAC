@@ -278,6 +278,7 @@
     <Folder Include="WindowControllers\InitialLogin\" />
     <Folder Include="WindowControllers\LoginNew\" />
     <Folder Include="WindowControllers\VacationDifference\" />
+    <Folder Include="WindowControllers\CommuteDifference\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -770,6 +771,15 @@
     <Compile Include="WindowControllers\VacationDifference\VacationDifferenceControllerController.designer.cs">
       <DependentUpon>VacationDifferenceControllerController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utility\CommuteCalculations.cs" />
+    <Compile Include="WindowControllers\CommuteDifference\CommutDifferenceController.cs" />
+    <Compile Include="WindowControllers\CommuteDifference\CommutDifferenceController.designer.cs">
+      <DependentUpon>CommutDifferenceController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowControllers\CommuteDifference\CommutDifferenceControllerController.cs" />
+    <Compile Include="WindowControllers\CommuteDifference\CommutDifferenceControllerController.designer.cs">
+      <DependentUpon>CommutDifferenceControllerController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainMenu.xib" />
@@ -849,6 +859,7 @@
     <InterfaceDefinition Include="WindowControllers\UserLogin\LoginWindow.xib" />
     <InterfaceDefinition Include="WindowControllers\LoginNew\NewLoginWindow.xib" />
     <InterfaceDefinition Include="WindowControllers\VacationDifference\VacationDifferenceController.xib" />
+    <InterfaceDefinition Include="WindowControllers\CommuteDifference\CommutDifferenceController.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

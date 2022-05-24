@@ -132,6 +132,9 @@ namespace WBid.WBidiPad.Model
 
         public SplitPointCities SplitPointCities { get; set; }
 
+        public string LocalFlightDataVersion { get; set; }
+
+
         #endregion
 
     }

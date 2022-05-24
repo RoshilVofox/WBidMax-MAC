@@ -348,5 +348,8 @@ namespace WBid.WBidiPad.Core
         public static bool isVFXServer { get; set; }
 
         public static bool IsNeedToEnableVacDiffButton { get; set; }
+
+        public static string ServerFlightDataVersion { get; set; }
+
     }
 }

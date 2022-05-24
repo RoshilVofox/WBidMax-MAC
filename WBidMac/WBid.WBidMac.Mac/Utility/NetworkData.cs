@@ -103,6 +103,78 @@ namespace WBid.WBidiPad.iOS.Utility
 
 		}
 
+		/// <summary>
+		///  To calculate the flight route details to calculate commute difference values. 
+		/// </summary>
+		public List<FlightRouteDetails> GetFlightRoutesForTempCalculation()
+		{
+			List<FlightRouteDetails> lstFlightRouteDetails = new List<FlightRouteDetails>();
+			string serverPath = GlobalSettings.WBidDownloadFileUrl + "FlightData.zip";
+			string zipLocalFile = Path.Combine(WBidHelper.GetAppDataPath(), "FlightDataTemp.zip");
+			string networkDataPath = WBidHelper.GetAppDataPath() + "/FlightDataTemp/" + "FlightData.NDA";
+
+			if (System.IO.File.Exists(networkDataPath))
+				File.Delete(networkDataPath);
+
+			GlobalSettings.FlightRouteDetails = null;
+			WebClient wcClient = new WebClient();
+			//Downloading networkdat file
+			wcClient.DownloadFile(serverPath, zipLocalFile);
+
+			string target = Path.Combine(WBidHelper.GetAppDataPath(), WBidHelper.GetAppDataPath() + "/FlightDataTemp/");
+			if (System.IO.File.Exists(networkDataPath))
+				File.Delete(networkDataPath);
+			//if (!File.Exists(networkDataPath))
+
+			{
+				if (File.Exists(zipLocalFile))
+					ZipFile.ExtractToDirectory(zipLocalFile, target);
+			}
+
+
+			if (File.Exists(zipLocalFile))
+			{
+				File.Delete(zipLocalFile);
+			}
+
+			lstFlightRouteDetails = ReadFlightRoutesForTemporary();
+			return lstFlightRouteDetails;
+		}
+
+		public List<FlightRouteDetails> ReadFlightRoutesForTemporary()
+		{
+			List<FlightRouteDetails> _flightRouteDetails = new List<FlightRouteDetails>();
+			//Deserializing data to FlightPlan object
+			string networkDataPath = WBidHelper.GetAppDataPath() + "/FlightDataTemp/" + "FlightData.NDA";
+			FlightPlan fp = new FlightPlan();
+			FlightPlan flightPlan = null;
+			using (FileStream networkDatatream = File.OpenRead(networkDataPath))
+			{
+
+				FlightPlan objineinfo = new FlightPlan();
+				flightPlan = ProtoSerailizer.DeSerializeObject(networkDataPath, fp, networkDatatream);
+
+			}
+
+			_flightRouteDetails = flightPlan.FlightRoutes.Join(flightPlan.FlightDetails, fr => fr.FlightId, f => f.FlightId,
+				(fr, f) =>
+				new FlightRouteDetails
+				{
+					Flight = f.FlightId,
+					FlightDate = fr.FlightDate,
+					Orig = f.Orig,
+					Dest = f.Dest,
+					Cdep = f.Cdep,
+					Carr = f.Carr,
+					Ldep = f.Ldep,
+					Larr = f.Larr,
+					RouteNum = fr.RouteNum,
+
+				}).ToList();
+			return _flightRouteDetails;
+		}
+
+
 	}
 }
 
