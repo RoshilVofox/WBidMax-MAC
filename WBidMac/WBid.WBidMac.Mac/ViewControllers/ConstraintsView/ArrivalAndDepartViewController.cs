@@ -317,7 +317,7 @@ namespace WBid.WBidMac.Mac
 		public NSTextField lblBackground;
 		public NSTextField lblArival;
 		public NSTextField lblDeparture;
-		public MyView2() : base(new CoreGraphics.CGRect(0,0,72,86))
+		public MyView2() : base(new CoreGraphics.CGRect(0,0,76,86))
 		{
 
 			lblBackground = new NSTextField(new  CoreGraphics.CGRect(0,0,74,86));
