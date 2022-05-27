@@ -109,8 +109,13 @@ namespace WBid.WBidMac.Mac
                     WBidStateContent.Weights.CLAuto.CheckInTime = ftCommutableLine.CheckInTime;
                     WBidStateContent.Weights.CLAuto.BaseTime = ftCommutableLine.BaseTime;
 					WBidStateContent.Weights.CLAuto.IsNonStopOnly = ftCommutableLine.IsNonStopOnly;
-                   
-                    lineproprty.CalculateCommuteLineProperties(WBidStateContent);
+
+					if (File.Exists(WBidHelper.WBidCommuteFilePath))
+					{
+						File.Delete(WBidHelper.WBidCommuteFilePath);
+
+					}
+					lineproprty.CalculateCommuteLineProperties(WBidStateContent);
 
                     if (WBidStateContent.CxWtState.CLAuto.Wt)
                         CommonClass.WeightsController.ApplyAndReloadWeights("Commutable Lines - Auto");
@@ -152,7 +157,12 @@ namespace WBid.WBidMac.Mac
 					WBidStateContent.Constraints.CLAuto.IsNonStopOnly = wtCommutableLineAuto.IsNonStopOnly;
                     lineproprty.CalculateCommuteLineProperties(WBidStateContent);
 
-                    if (WBidStateContent.CxWtState.CLAuto.Cx)
+					if (File.Exists(WBidHelper.WBidCommuteFilePath))
+					{
+						File.Delete(WBidHelper.WBidCommuteFilePath);
+
+					}
+					if (WBidStateContent.CxWtState.CLAuto.Cx)
                         CommonClass.ConstraintsController.ApplyAndReloadConstraints("Commutable Lines - Auto");
 					// NSNotificationCenter.DefaultCenter.PostNotificationName("CLWeightNotification", null);
 					NSNotificationCenter.DefaultCenter.PostNotificationName("CLWeightNotification", null);
@@ -184,7 +194,12 @@ namespace WBid.WBidMac.Mac
                         ftCommutableLine.BaseTime = ConvertHHMMToMinute(popUpBackTobase.Title);
 						ftCommutableLine.IsNonStopOnly = (btnNonStop.State == NSCellStateValue.On);
 					}
-                    CommonClass.MainController.UpdateSaveButton(true);
+					if (File.Exists(WBidHelper.WBidCommuteFilePath))
+					{
+						File.Delete(WBidHelper.WBidCommuteFilePath);
+
+					}
+					CommonClass.MainController.UpdateSaveButton(true);
                     NSNotificationCenter.DefaultCenter.PostNotificationName("CLONotification", null);
                     break;
                 case CommutableAutoFrom.Sort:
@@ -232,8 +247,14 @@ namespace WBid.WBidMac.Mac
 
 					lineproprty.CalculateCommuteLineProperties(WBidStateContent);
 
-                    //we dont need to appy block sort logic becuase it will calulates in the notifications
-                    if (WBidStateContent.CxWtState.CLAuto.Cx)
+					if (File.Exists(WBidHelper.WBidCommuteFilePath))
+					{
+						File.Delete(WBidHelper.WBidCommuteFilePath);
+
+					}
+					
+					//we dont need to appy block sort logic becuase it will calulates in the notifications
+					if (WBidStateContent.CxWtState.CLAuto.Cx)
                         CommonClass.ConstraintsController.ApplyAndReloadConstraints("Commutable Lines - Auto");
                     if (WBidStateContent.CxWtState.CLAuto.Wt)
                         CommonClass.WeightsController.ApplyAndReloadWeights("Commutable Lines - Auto");
@@ -241,8 +262,8 @@ namespace WBid.WBidMac.Mac
                     break;
 
             }
-
-            this.View.Window.Close();
+			CommonClass.MainController.SetFlightDataDiffButton();
+			this.View.Window.Close();
             this.View.Window.OrderOut(this);
            
         }

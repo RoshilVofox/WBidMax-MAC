@@ -1923,8 +1923,10 @@ public void ApplyAndReloadConstraintsFromCommutability(string constraint)
 					appliedConstraints.Remove(constraint);
 					tblConstraints.ReloadData();
 				}
+				
 				CommonClass.MainController.ReloadAllContent ();
 				lblLineCount.StringValue = constCalc.LinesNotConstrained ();
+				CommonClass.MainController.SetFlightDataDiffButton();
 			} catch (Exception ex) {
 				CommonClass.AppDelegate.ErrorLog (ex);
 				CommonClass.AppDelegate.ShowErrorMessage (WBidErrorMessages.CommonError);

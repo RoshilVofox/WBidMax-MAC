@@ -694,6 +694,7 @@ namespace WBid.WBidMac.Mac
 					if (serviceResponseModel.IsAuthorized) 
 					{
 						GlobalSettings.IsNeedToDownloadSeniorityUser=serviceResponseModel.IsNeedToDownloadSeniorityFromServer;
+						GlobalSettings.ServerFlightDataVersion = serviceResponseModel.FlightDataVersion;
 						NSNotificationCenter.DefaultCenter.PostNotificationName ("authCheckSuccess", null);
 						//this.startProgress();
 						_downloadFileDetails.SessionCredentials = _sessionCredentials;
@@ -2181,7 +2182,10 @@ namespace WBid.WBidMac.Mac
                     if (File.Exists(zipLocalFile))
                     {
                         ZipFile.ExtractToDirectory(zipLocalFile, target);
-                    }
+
+						GlobalSettings.WBidINIContent.LocalFlightDataVersion = GlobalSettings.ServerFlightDataVersion;
+						WBidHelper.SaveINIFile(GlobalSettings.WBidINIContent, WBidHelper.GetWBidINIFilePath());
+					}
                 }
 
             }
@@ -2301,6 +2305,9 @@ namespace WBid.WBidMac.Mac
 					// Look for the desired file
 					foreach (ZipStorer.ZipFileEntry entry in dir) {
 						zip.ExtractFile (entry, WBidHelper.GetAppDataPath () + "/" + entry);
+
+						GlobalSettings.WBidINIContent.LocalFlightDataVersion = GlobalSettings.ServerFlightDataVersion;
+						WBidHelper.SaveINIFile(GlobalSettings.WBidINIContent, WBidHelper.GetWBidINIFilePath());
 					}
 					zip.Close ();
 

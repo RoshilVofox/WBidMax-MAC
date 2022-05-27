@@ -1665,7 +1665,7 @@ namespace WBid.WBidMac.Mac
                     appliedWeights.Remove(weight);
                     tblWeights.ReloadData();
                 }
-
+                CommonClass.MainController.SetFlightDataDiffButton();
                 CommonClass.MainController.ReloadAllContent();
             }
             catch (Exception ex)

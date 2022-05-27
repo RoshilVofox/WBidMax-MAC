@@ -200,12 +200,15 @@ namespace WBid.WBidiPad.PortableLibrary.BusinessLogic
 
             if (wBidStateContent.CxWtState.Commute == null)
                 wBidStateContent.CxWtState.Commute = new StateStatus { Cx = false, Wt = false };
-            if (wBidStateContent.CxWtState.Commute.Cx)
+           
+
+            if (wBidStateContent.CxWtState.CLAuto == null)
+                wBidStateContent.CxWtState.CLAuto = new StateStatus { Cx = false, Wt = false };
+            if (wBidStateContent.CxWtState.CLAuto.Cx || wBidStateContent.CxWtState.CLAuto.Wt || wBidStateContent.CxWtState.Commute.Cx || wBidStateContent.CxWtState.Commute.Wt || (wBidStateContent.SortDetails.BlokSort.Contains("33") || wBidStateContent.SortDetails.BlokSort.Contains("34") || wBidStateContent.SortDetails.BlokSort.Contains("35")))
             {
                 CalculateLineProperties lineproprty = new CalculateLineProperties();
                 lineproprty.CalculateCommuteLineProperties(wBidStateContent);
             }
-
             foreach (Line line in requiredLines)
             {
                 //---------------------------------------------------------------------------------------------

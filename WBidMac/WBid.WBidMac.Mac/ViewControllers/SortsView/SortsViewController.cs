@@ -856,6 +856,7 @@ namespace WBid.WBidMac.Mac
             else if (sort == "Commutable Line-Auto")
             {
                 wBidStateContent.SortDetails.BlokSort.RemoveAll(x => x == "33" || x == "34" || x == "35");
+                CommonClass.MainController.SetFlightDataDiffButton();
             }
             else if (sort == "Commutable Line- Manual")
             {

@@ -323,7 +323,12 @@ void PopUpCheckInTime_Activated(object sender, EventArgs e)
 				CalculateLineProperties lineproprty = new CalculateLineProperties();
 				lineproprty.CalculateCommuteLineProperties(WBidStateContent);
 
-                Recalculatevalues();
+				if (File.Exists(WBidHelper.WBidCommuteFilePath))
+				{
+					File.Delete(WBidHelper.WBidCommuteFilePath);
+
+				}
+				Recalculatevalues();
 				NSNotificationCenter.DefaultCenter.PostNotificationName("CmtbltyNotification", null);
 
 			}
@@ -366,7 +371,13 @@ void PopUpCheckInTime_Activated(object sender, EventArgs e)
 
 				CalculateLineProperties line = new CalculateLineProperties();
 				line.CalculateCommuteLineProperties(WBidStateContent);
-                Recalculatevalues();
+
+				if (File.Exists(WBidHelper.WBidCommuteFilePath))
+				{
+					File.Delete(WBidHelper.WBidCommuteFilePath);
+
+				}
+				Recalculatevalues();
 				NSNotificationCenter.DefaultCenter.PostNotificationName("CmtbltyWeightNotification", null);
 			}
 
@@ -401,6 +412,11 @@ void PopUpCheckInTime_Activated(object sender, EventArgs e)
 				WBidStateContent.Constraints.Commute.City = popUpCommuteCity.Title;
 				WBidStateContent.Constraints.Commute.BaseTime = ftCommutableLine.BaseTime;
 
+				if (File.Exists(WBidHelper.WBidCommuteFilePath))
+				{
+					File.Delete(WBidHelper.WBidCommuteFilePath);
+
+				}
 				CalculateLineProperties lineproprty = new CalculateLineProperties();
 				lineproprty.CalculateCommuteLineProperties(WBidStateContent);
 

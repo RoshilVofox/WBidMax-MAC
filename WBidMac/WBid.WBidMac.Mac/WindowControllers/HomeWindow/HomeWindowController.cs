@@ -17,6 +17,7 @@ using WBid.WBidiPad.PortableLibrary;
 using WBid.WBidiPad.PortableLibrary.BusinessLogic;
 //using MonoTouch.CoreGraphics;
 using WBid.WBidiPad.SharedLibrary.Utility;
+using WBid.WBidMac.Mac.Utility;
 using WBid.WBidMac.Mac.WindowControllers.initialLogin;
 using WBid.WBidMac.Mac.WindowControllers.LoginNew;
 using WBid.WBidMac.Mac.WindowControllers.UserAccoutDifference;
@@ -267,7 +268,7 @@ namespace WBid.WBidMac.Mac
 			StreamReader dr = ServiceUtils.GetRestData("GetApplicationLoadDatas", jsonData);
 			ApplicationLoadData appLoadData = WBidCollection.ConvertJSonStringToObject<ApplicationLoadData>(dr.ReadToEnd());
 			GlobalSettings.IsNeedToEnableVacDiffButton = appLoadData.IsNeedtoEnableVacationDifference;
-
+			GlobalSettings.ServerFlightDataVersion = appLoadData.FlightDataVersion;
 		}
 
 		private void checkUserDetails(WBidDataDownloadAuthorizationService.Model.UserInformation userData)
@@ -495,7 +496,8 @@ namespace WBid.WBidMac.Mac
 				//if (MessageBox.Show(message, "WBidMax", System.Windows.MessageBoxButton.YesNo, System.Windows.MessageBoxImage.Information) == System.Windows.MessageBoxResult.Yes)
 				// {
 				string fileName = domcile + position + bidperiod.ToString ("d2") + (year - 2000) + (round == "1st Round" ? "M" : "S") + "737";
-
+				string CommutefileName = domcile + position + bidperiod.ToString("d2") + (year - 2000) + (round == "1st Round" ? "M" : "S") + "Cmt.COM";
+				
 				string folderName = WBidCollection.GetPositions ().FirstOrDefault (x => x.LongStr == fileName.Substring (3, 2)).ShortStr + (round == "1st Round" ? "D" : "B") + fileName.Substring (0, 3) + WBidCollection.GetBidPeriods ().FirstOrDefault (x => x.BidPeriodId == bidperiod).HexaValue;
 				//Delete WBL file
 				if (File.Exists (WBidHelper.GetAppDataPath () + "/" + fileName + ".WBL")) {
@@ -524,6 +526,17 @@ namespace WBid.WBidMac.Mac
 				if (Directory.Exists (WBidHelper.GetAppDataPath () + "/" + folderName)) {
 					Directory.Delete (WBidHelper.GetAppDataPath () + "/" + folderName, true);
 				}
+				if (Directory.Exists(WBidHelper.GetAppDataPath() + "/" + folderName))
+				{
+					Directory.Delete(WBidHelper.GetAppDataPath() + "/" + folderName, true);
+				}
+				//Delete Commute file
+				if (File.Exists(WBidHelper.GetAppDataPath() + "/" + CommutefileName))
+				{
+					File.Delete(WBidHelper.GetAppDataPath() + "/" + CommutefileName);
+
+				}
+
 			} catch (Exception ex) {
 				CommonClass.AppDelegate.ErrorLog (ex);
 				CommonClass.AppDelegate.ShowErrorMessage (WBidErrorMessages.CommonError);
@@ -976,7 +989,19 @@ namespace WBid.WBidMac.Mac
 						
 						WBidHelper.GenerateDynamicOverNightCitiesList ();
 						GlobalSettings.AllCitiesInBid = GlobalSettings.WBidINIContent.Cities.Select (y => y.Name).ToList ();
-						
+
+						if (wBIdStateContent.CxWtState.CLAuto == null)
+							wBIdStateContent.CxWtState.CLAuto = new StateStatus { Cx = false, Wt = false };
+						if (GlobalSettings.CurrentBidDetails.Month == DateTime.Now.AddMonths(1).Month && (wBIdStateContent.CxWtState.CLAuto.Cx || wBIdStateContent.CxWtState.CLAuto.Wt || (wBIdStateContent.SortDetails.BlokSort.Contains("33") || wBIdStateContent.SortDetails.BlokSort.Contains("34") || wBIdStateContent.SortDetails.BlokSort.Contains("35"))))
+						{
+							if (GlobalSettings.FlightRouteDetails == null)
+							{
+								NetworkData networkplandata = new NetworkData();
+								networkplandata.ReadFlightRoutes();
+							}
+							CommuteCalculations objCommuteCalculations = new CommuteCalculations();
+							objCommuteCalculations.CalculateDailyCommutableTimes(wBIdStateContent.Constraints.CLAuto, GlobalSettings.FlightRouteDetails);
+						}
 						if (GlobalSettings.WBidStateCollection.Vacation!=null && GlobalSettings.WBidStateCollection.Vacation.Count > 0) {
 							GlobalSettings.SeniorityListMember = GlobalSettings.SeniorityListMember ?? new SeniorityListMember ();
 							GlobalSettings.SeniorityListMember.Absences = new List<Absense> ();

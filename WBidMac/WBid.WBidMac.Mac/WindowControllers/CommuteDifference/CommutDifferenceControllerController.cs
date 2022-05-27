@@ -17,6 +17,7 @@ namespace WBid.WBidMac.Mac.WindowControllers.CommuteDifference
     {
         WBidState wBidStateContent;
         List<CommuteFltChangeValues> commutDiffData;
+        public bool IsNeedToClose { get; set; }
         public CommutDifferenceControllerController(IntPtr handle) : base(handle)
         {
         }
@@ -34,6 +35,16 @@ namespace WBid.WBidMac.Mac.WindowControllers.CommuteDifference
         {
             base.AwakeFromNib();
 
+            this.Window.WillClose += delegate
+            {
+                this.Window.OrderOut(this);
+                NSApplication.SharedApplication.StopModal();
+            };
+
+
+        }
+        public void GetCommuteDifferenceData()
+        {
             try
             {
                 wBidStateContent = GlobalSettings.WBidStateCollection.StateList.FirstOrDefault(x => x.StateName == GlobalSettings.WBidStateCollection.DefaultName);
@@ -96,11 +107,11 @@ namespace WBid.WBidMac.Mac.WindowControllers.CommuteDifference
 
                         commutDiffData = new List<CommuteFltChangeValues>(lstComuteLineProperties);
 
-
+                        
                     }
                     else
                     {
-                        bool IsNeedToClose = true;
+                        IsNeedToClose = true;
                         string alertmessage = GlobalSettings.VPSDownAlert;
                         if (Reachability.IsSouthWestWifiOr2wire())
                         {
@@ -115,8 +126,20 @@ namespace WBid.WBidMac.Mac.WindowControllers.CommuteDifference
                     lstComuteLineProperties = objCommuteFltChange.LstCommuteFltChangeValues;
                     commutDiffData = new List<CommuteFltChangeValues>(lstComuteLineProperties);
 
-                }
 
+                }
+                if (commutDiffData.Count > 0)
+                {
+                     tblCommuteDifference.Source = new CommutDifferenceTableSource(this);
+                }
+                else
+                {
+
+                    IsNeedToClose = true;
+
+                    ShowMessageBox("WBidMax", "There are no differences in pay for your vacation with the new Flight Data.");
+
+                }
 
 
 

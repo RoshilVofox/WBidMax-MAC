@@ -96,6 +96,17 @@ namespace WBid.WBidMac.Mac.WindowControllers.VacationDifference
                 if (lstVacationDifferencedata.Count > 0)
                 {
                     lstFlightDataChangevalues = lstVacationDifferencedata.FirstOrDefault().lstFlightDataChangeVacValues;
+                    foreach (var item in lstFlightDataChangevalues)
+                    {
+                        var lineobj = GlobalSettings.Lines.FirstOrDefault(x => x.LineNum == item.LineNum);
+                        if (lineobj != null)
+                        {
+                            item.OldTotalPay = lineobj.Tfp;
+                            item.OldVPCu = Decimal.Round(lineobj.VacPayCuBp, 2);
+                            item.OldVPNe = Decimal.Round(lineobj.VacPayNeBp, 2);
+                            item.OldVPBo = Decimal.Round(lineobj.VacPayBothBp, 2);
+                        }
+                    }
                     tblVacationDiff.Source = new VacationDifferenceTableSource(this);
                 }
                 else

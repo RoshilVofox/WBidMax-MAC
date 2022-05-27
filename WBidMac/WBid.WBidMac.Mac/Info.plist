@@ -26,9 +26,9 @@
 	<false/>
 	<key>com.apple.security.automation.apple-events</key>
 	<true/>
-	<key>CFBundleVersion</key>
-	<string>1</string>
 	<key>UseHardenedRuntime</key>
 	<true/>
+	<key>CFBundleVersion</key>
+	<string>2</string>
 </dict>
 </plist>

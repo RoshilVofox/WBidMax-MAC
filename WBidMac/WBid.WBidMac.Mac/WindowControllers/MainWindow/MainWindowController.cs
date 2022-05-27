@@ -310,12 +310,49 @@ namespace WBid.WBidMac.Mac
                     Synch ();
                 });
                 TextColor(btnVacation, NSColor.Black);
-                btnVacDiff.Hidden = !GlobalSettings.IsNeedToEnableVacDiffButton;
+                SetFlightDataDiffButton();
 
             } catch (Exception ex) {
                 CommonClass.AppDelegate.ErrorLog (ex);
                 CommonClass.AppDelegate.ShowErrorMessage (WBidErrorMessages.CommonError);
             }
+        }
+        private bool IsCommuteAutoAvailable()
+        {
+            bool isCommuteAutoAvailable = false;
+            if (wBIdStateContent.CxWtState.CLAuto.Cx || wBIdStateContent.CxWtState.CLAuto.Wt || (wBIdStateContent.SortDetails.BlokSort.Contains("33") || wBIdStateContent.SortDetails.BlokSort.Contains("34") || wBIdStateContent.SortDetails.BlokSort.Contains("35")))
+            {
+                isCommuteAutoAvailable = true;
+            }
+            return isCommuteAutoAvailable;
+        }
+        public void SetFlightDataDiffButton()
+        {
+            bool IsEnableFltDiff;
+            if (GlobalSettings.IsNeedToEnableVacDiffButton)
+            {
+                bool isCommuteAutoAvailable = false;
+                if (wBIdStateContent != null && (wBIdStateContent.CxWtState.CLAuto.Cx || wBIdStateContent.CxWtState.CLAuto.Wt || (wBIdStateContent.SortDetails.BlokSort.Contains("33") || wBIdStateContent.SortDetails.BlokSort.Contains("34") || wBIdStateContent.SortDetails.BlokSort.Contains("35"))))
+                {
+                    isCommuteAutoAvailable = true;
+                }
+
+
+                if (GlobalSettings.CurrentBidDetails != null && GlobalSettings.CurrentBidDetails.Postion == "FA")
+                {
+                    //For FA, the Flt difference button should be display only when user set any commutable line auto in constraints ,weights,sorts or in bid auto
+                    IsEnableFltDiff = isCommuteAutoAvailable && (GlobalSettings.ServerFlightDataVersion != GlobalSettings.WBidINIContent.LocalFlightDataVersion);
+                }
+                else
+                {
+                    IsEnableFltDiff = ((isCommuteAutoAvailable && (GlobalSettings.ServerFlightDataVersion != GlobalSettings.WBidINIContent.LocalFlightDataVersion)) || (btnVacation.Enabled || btnEOM.Enabled));
+                }
+            }
+            else
+            {
+                IsEnableFltDiff = false;
+            }
+            btnVacDiff.Hidden = !IsEnableFltDiff;
         }
         private void setVacationButton()
         { }
@@ -1423,6 +1460,11 @@ namespace WBid.WBidMac.Mac
                     }
                     wBidStateContent.SortDetails.SortColumn = "Manual";
 
+                    bool isCommuteAutoAvailable = IsCommuteAutoAvailable();
+                    if (isCommuteAutoAvailable == true && File.Exists(WBidHelper.WBidCommuteFilePath))
+                    {
+                        File.Delete(WBidHelper.WBidCommuteFilePath);
+                    }
                     string stateFilePath = Path.Combine(WBidHelper.GetAppDataPath(), stateQsSync.StateFileName + ".WBS");
                     //WBidCollection.SaveStateFile(GlobalSettings.WBidStateCollection, stateFilePath);
                     WBidHelper.SaveStateFile(WBidHelper.WBidStateFilePath);
@@ -2563,42 +2605,90 @@ namespace WBid.WBidMac.Mac
         }
         void btnVacDiffClicked(object sender, EventArgs e)
         {
+            if (GlobalSettings.CurrentBidDetails.Postion == "FA")
+            {
+                //show commut diff.
+                var showcmtDiff = new CommutDifferenceControllerController();
+                showcmtDiff.Window.MakeKeyAndOrderFront(this);
+                showcmtDiff.GetCommuteDifferenceData();
 
-            var alert = new NSAlert();
-            alert.AlertStyle = NSAlertStyle.Informational;
-            alert.MessageText = "WBidMax";
-            alert.InformativeText = "You may have changes in commute and vacation due to new flight data. What would you like to open?";
-            alert.AddButton("View Vacation Difference");
-            alert.AddButton("View Commute Difference");
-            alert.Buttons[0].Activated += (object sender1, EventArgs ex) => {
-                alert.Window.Close();
-                NSApplication.SharedApplication.StopModal();
-
-                var showvacDiff = new VacationDifferenceControllerController();
-                showvacDiff.Window.MakeKeyAndOrderFront(this);
-                showvacDiff.GetVacationDifffrenceData();
-                if (!showvacDiff.IsNeedToClose)
+                if (!showcmtDiff.IsNeedToClose)
                 {
-                    CommonClass.MainController.Window.AddChildWindow(showvacDiff.Window, NSWindowOrderingMode.Above);
-                    NSApplication.SharedApplication.RunModalForWindow(showvacDiff.Window);
+                    CommonClass.MainController.Window.AddChildWindow(showcmtDiff.Window, NSWindowOrderingMode.Above);
+                    NSApplication.SharedApplication.RunModalForWindow(showcmtDiff.Window);
                 }
-            };
-            alert.Buttons[1].Activated += (object sender1, EventArgs ex) => {
-                alert.Window.Close();
-                NSApplication.SharedApplication.StopModal();
+            }
+            else
+            {
+                bool isCommuteAutoAvailable = IsCommuteAutoAvailable();
+                
+                if (((isCommuteAutoAvailable && (GlobalSettings.ServerFlightDataVersion != GlobalSettings.WBidINIContent.LocalFlightDataVersion)) && (btnVacation.Enabled || btnEOM.Enabled)))
+                {
+                    var alert = new NSAlert();
+                    alert.AlertStyle = NSAlertStyle.Informational;
+                    alert.MessageText = "WBidMax";
+                    alert.InformativeText = "You may have changes in commute and vacation due to new flight data. What would you like to open?";
+                    alert.AddButton("View Vacation Difference");
+                    alert.AddButton("View Commute Difference");
+                    alert.Buttons[0].Activated += (object sender1, EventArgs ex) =>
+                    {
+                        alert.Window.Close();
+                        NSApplication.SharedApplication.StopModal();
 
-                var showvacDiff = new CommutDifferenceControllerController();
-                showvacDiff.Window.MakeKeyAndOrderFront(this);
-                //showvacDiff.GetVacationDifffrenceData();
-                //if (!showvacDiff.IsNeedToClose)
-                //{
-                //    CommonClass.MainController.Window.AddChildWindow(showvacDiff.Window, NSWindowOrderingMode.Above);
-                //    NSApplication.SharedApplication.RunModalForWindow(showvacDiff.Window);
-                //}
-            };
-            alert.RunModal();
+                        var showvacDiff = new VacationDifferenceControllerController();
+                        showvacDiff.Window.MakeKeyAndOrderFront(this);
+                        showvacDiff.GetVacationDifffrenceData();
+                        if (!showvacDiff.IsNeedToClose)
+                        {
+                            CommonClass.MainController.Window.AddChildWindow(showvacDiff.Window, NSWindowOrderingMode.Above);
+                            NSApplication.SharedApplication.RunModalForWindow(showvacDiff.Window);
+                        }
+                    };
+                    alert.Buttons[1].Activated += (object sender1, EventArgs ex) =>
+                    {
+                        alert.Window.Close();
+                        NSApplication.SharedApplication.StopModal();
 
-            
+                        var showcmtDiff = new CommutDifferenceControllerController();
+                        showcmtDiff.Window.MakeKeyAndOrderFront(this);
+                        showcmtDiff.GetCommuteDifferenceData();
+
+                        if (!showcmtDiff.IsNeedToClose)
+                        {
+                            CommonClass.MainController.Window.AddChildWindow(showcmtDiff.Window, NSWindowOrderingMode.Above);
+                            NSApplication.SharedApplication.RunModalForWindow(showcmtDiff.Window);
+                        }
+                    };
+                    alert.RunModal();
+                }
+                else if ((isCommuteAutoAvailable && (GlobalSettings.ServerFlightDataVersion != GlobalSettings.WBidINIContent.LocalFlightDataVersion)))
+                {
+                    //show commut diff
+
+                    var showcmtDiff = new CommutDifferenceControllerController();
+                    showcmtDiff.Window.MakeKeyAndOrderFront(this);
+                    showcmtDiff.GetCommuteDifferenceData();
+
+                    if (!showcmtDiff.IsNeedToClose)
+                    {
+                        CommonClass.MainController.Window.AddChildWindow(showcmtDiff.Window, NSWindowOrderingMode.Above);
+                        NSApplication.SharedApplication.RunModalForWindow(showcmtDiff.Window);
+                    }
+                }
+                else
+                {
+                    //show vac diff
+                    var showvacDiff = new VacationDifferenceControllerController();
+                    showvacDiff.Window.MakeKeyAndOrderFront(this);
+                    showvacDiff.GetVacationDifffrenceData();
+                    if (!showvacDiff.IsNeedToClose)
+                    {
+                        CommonClass.MainController.Window.AddChildWindow(showvacDiff.Window, NSWindowOrderingMode.Above);
+                        NSApplication.SharedApplication.RunModalForWindow(showvacDiff.Window);
+                    }
+                }
+
+            }
         }
         void btnMILClicked (object sender, EventArgs e)
         {

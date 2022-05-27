@@ -44,14 +44,14 @@ namespace WBid.WBidiPad.PortableLibrary.BusinessLogic
 						});
 			}
 
-			if (wBidStateContent.CxWtState.Commute == null)
-				wBidStateContent.CxWtState.Commute = new StateStatus { Cx = false, Wt = false };
+			//if (wBidStateContent.CxWtState.Commute == null)
+			//	wBidStateContent.CxWtState.Commute = new StateStatus { Cx = false, Wt = false };
 
-			if (wBidStateContent.CxWtState.Commute.Wt)
-			{
-				CalculateLineProperties lineproprty=new CalculateLineProperties();
-				lineproprty.CalculateCommuteLineProperties (wBidStateContent);
-			}
+			//if (wBidStateContent.CxWtState.Commute.Wt)
+			//{
+			//	CalculateLineProperties lineproprty=new CalculateLineProperties();
+			//	lineproprty.CalculateCommuteLineProperties (wBidStateContent);
+			//}
 			foreach (Line line in requiredLines)
 			{
 				//---------------------------------------------------------------------------------------------
