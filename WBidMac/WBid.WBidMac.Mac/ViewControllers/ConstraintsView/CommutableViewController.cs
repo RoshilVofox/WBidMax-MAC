@@ -815,6 +815,7 @@ namespace WBid.WBidMac.Mac
 		{
 			
 						ArrivalAndDepartViewController ObjArrival= new ArrivalAndDepartViewController();
+			
 			ObjArrival.ObjArrivaltype=(CommutableAutoFrom)Objtype;
 			ObjArrival.City=popUpCommuteCity.Title;
 			ObjArrival.IsNonStop = (btnNonStop.State == NSCellStateValue.On); 

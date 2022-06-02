@@ -19,7 +19,7 @@
 	<key>NSAppleEventsUsageDescription</key>
 	<string>Please give access to Export pairing to Outlook</string>
 	<key>CFBundleShortVersionString</key>
-	<string>6.52.1.8</string>
+	<string>6.52.2.0</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 	<key>NSRequiresAquaSystemAppearance</key>
@@ -29,6 +29,6 @@
 	<key>UseHardenedRuntime</key>
 	<true/>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>1</string>
 </dict>
 </plist>
